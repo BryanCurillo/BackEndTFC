@@ -1,0 +1,1 @@
+INSERT INTO public.persona(per_id, per_apellido, per_cedula, per_correo, per_direccion, per_nombre, per_sexo, per_telefono)VALUES (1, 'cora', '015213131', 'cora@gmail.com', 'asdasd', 'ale', 'fem', '4644564465');
