@@ -27,48 +27,59 @@ public class Oferta implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ofe_id;
+	private Long ofeID;
 	/**
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "tru_numero")
-	private List<Trueque> ofe_idTrueque;
+	private List<Trueque> ofeIDTRUEQUE;
 	/***
 	 * 
 	 */
 	
-	@OneToOne
-	@JoinColumn(name = "ofe_idOfertante")
-	private Usuario ofe_idOfertante;
+	@OneToOne(mappedBy = "oferta")
+	private ProductoOferta oferta;
 	
-	private Boolean ofe_Estado;
+	@OneToOne
+	@JoinColumn(name = "ofeIDOFERTANTE")
+	private Usuario ofeIDOFERTANTE;
+	
+	private Boolean ofeESTADO;
 	/**
 	 * 
 	 */
 
-	public Long getOfe_id() {
-		return ofe_id;
+	public Long getOfeID() {
+		return ofeID;
 	}
 
-	public void setOfe_id(Long ofe_id) {
-		this.ofe_id = ofe_id;
+	public void setOfeID(Long ofeID) {
+		this.ofeID = ofeID;
 	}
 
-	public Usuario getOfe_idOfertante() {
-		return ofe_idOfertante;
+	public List<Trueque> getOfeIDTRUEQUE() {
+		return ofeIDTRUEQUE;
 	}
 
-	public void setOfe_idOfertante(Usuario ofe_idOfertante) {
-		this.ofe_idOfertante = ofe_idOfertante;
+	public void setOfeIDTRUEQUE(List<Trueque> ofeIDTRUEQUE) {
+		this.ofeIDTRUEQUE = ofeIDTRUEQUE;
 	}
 
-	public Boolean getOfe_Estado() {
-		return ofe_Estado;
+	public Usuario getOfeIDOFERTANTE() {
+		return ofeIDOFERTANTE;
 	}
 
-	public void setOfe_Estado(Boolean ofe_Estado) {
-		this.ofe_Estado = ofe_Estado;
+	public void setOfeIDOFERTANTE(Usuario ofeIDOFERTANTE) {
+		this.ofeIDOFERTANTE = ofeIDOFERTANTE;
+	}
+
+	public Boolean getOfeESTADO() {
+		return ofeESTADO;
+	}
+
+	public void setOfeESTADO(Boolean ofeESTADO) {
+		this.ofeESTADO = ofeESTADO;
 	}
 	
 }

@@ -23,43 +23,43 @@ public class PieFactura implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pie_id;
+	private Long pieID;
 	
-	private Double pie_subTotal;
-	private Double pie_total;
-	private Double pie_precioEnvio;
+	private Double pieSUBTOTAL;
+	private Double pieTOTAL;
+	private Double piePRECIOENVIO;
 	/**
 	 * 
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "pie_idEncabezado")
+	@JoinColumn(name = "pieIDENCABEZADO")
 	private EncabezadoFactura encabezadoFactura;
 	/**
 	 * 
 	 */
-	public Long getPie_id() {
-		return pie_id;
+	public Long getPieID() {
+		return pieID;
 	}
-	public void setPie_id(Long pie_id) {
-		this.pie_id = pie_id;
+	public void setPieID(Long pieID) {
+		this.pieID = pieID;
 	}
-	public Double getPie_subTotal() {
-		return pie_subTotal;
+	public Double getPieSUBTOTAL() {
+		return pieSUBTOTAL;
 	}
-	public void setPie_subTotal(Double pie_subTotal) {
-		this.pie_subTotal = pie_subTotal;
+	public void setPieSUBTOTAL(Double pieSUBTOTAL) {
+		this.pieSUBTOTAL = pieSUBTOTAL;
 	}
-	public Double getPie_total() {
-		return pie_total;
+	public Double getPieTOTAL() {
+		return pieTOTAL;
 	}
-	public void setPie_total(Double pie_total) {
-		this.pie_total = pie_total;
+	public void setPieTOTAL(Double pieTOTAL) {
+		this.pieTOTAL = pieTOTAL;
 	}
-	public Double getPie_precioEnvio() {
-		return pie_precioEnvio;
+	public Double getPiePRECIOENVIO() {
+		return piePRECIOENVIO;
 	}
-	public void setPie_precioEnvio(Double pie_precioEnvio) {
-		this.pie_precioEnvio = pie_precioEnvio;
+	public void setPiePRECIOENVIO(Double piePRECIOENVIO) {
+		this.piePRECIOENVIO = piePRECIOENVIO;
 	}
 	public EncabezadoFactura getEncabezadoFactura() {
 		return encabezadoFactura;
@@ -67,7 +67,5 @@ public class PieFactura implements Serializable{
 	public void setEncabezadoFactura(EncabezadoFactura encabezadoFactura) {
 		this.encabezadoFactura = encabezadoFactura;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
+	
 }

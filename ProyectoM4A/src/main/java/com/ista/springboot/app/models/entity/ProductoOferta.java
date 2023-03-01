@@ -22,28 +22,28 @@ public class ProductoOferta implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long po_id;
+	private Long poID;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "po_idOferta")
+	@JoinColumn(name = "poIDOFERTA")
 	private Oferta oferta;
 	/**
 	 * 
 	 */
-	private String po_nombre;
-	private Double po_precio;
-	private Byte po_foto;
-	private String po_descripcion;
+	private String poNOMBRE;
+	private Double poPRECIO;
+	private Byte poFOTO;
+	private String poDESCRIPCION;
 	/**
 	 * 
 	 */
-	public Long getPo_id() {
-		return po_id;
+	public Long getPoID() {
+		return poID;
 	}
-	public void setPo_id(Long po_id) {
-		this.po_id = po_id;
+	public void setPoID(Long poID) {
+		this.poID = poID;
 	}
 	public Oferta getOferta() {
 		return oferta;
@@ -51,29 +51,29 @@ public class ProductoOferta implements Serializable{
 	public void setOferta(Oferta oferta) {
 		this.oferta = oferta;
 	}
-	public String getPo_nombre() {
-		return po_nombre;
+	public String getPoNOMBRE() {
+		return poNOMBRE;
 	}
-	public void setPo_nombre(String po_nombre) {
-		this.po_nombre = po_nombre;
+	public void setPoNOMBRE(String poNOMBRE) {
+		this.poNOMBRE = poNOMBRE;
 	}
-	public Double getPo_precio() {
-		return po_precio;
+	public Double getPoPRECIO() {
+		return poPRECIO;
 	}
-	public void setPo_precio(Double po_precio) {
-		this.po_precio = po_precio;
+	public void setPoPRECIO(Double poPRECIO) {
+		this.poPRECIO = poPRECIO;
 	}
-	public Byte getPo_foto() {
-		return po_foto;
+	public Byte getPoFOTO() {
+		return poFOTO;
 	}
-	public void setPo_foto(Byte po_foto) {
-		this.po_foto = po_foto;
+	public void setPoFOTO(Byte poFOTO) {
+		this.poFOTO = poFOTO;
 	}
-	public String getPo_descripcion() {
-		return po_descripcion;
+	public String getPoDESCRIPCION() {
+		return poDESCRIPCION;
 	}
-	public void setPo_descripcion(String po_descripcion) {
-		this.po_descripcion = po_descripcion;
+	public void setPoDESCRIPCION(String poDESCRIPCION) {
+		this.poDESCRIPCION = poDESCRIPCION;
 	}
 	
 }

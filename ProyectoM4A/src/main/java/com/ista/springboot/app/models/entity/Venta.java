@@ -22,43 +22,43 @@ public class Venta implements Serializable {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ven_id;
-	private String ven_metodoPago;
+	private Long venID;
+	private String venMETODOPAGO;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "ven_idProducto")
+	@JoinColumn(name = "venIDPRODUCTO")
 	private Producto ven_idProducto;
 	
-	@OneToOne(mappedBy = "enca_idVenta")
+	@OneToOne(mappedBy = "encaIDVENTA")
 	private EncabezadoFactura encabezadoFactura;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "ven_idComprador")
+	@JoinColumn(name = "venIDCOMPRADOR")
 	private Usuario usuario;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "ven_idVendedor")
+	@JoinColumn(name = "venIDVENDEDOR")
 	private Usuario usuario1;
 	/**
 	 * 
 	 */
-	public Long getVen_id() {
-		return ven_id;
+	public Long getVenID() {
+		return venID;
 	}
-	public void setVen_id(Long ven_id) {
-		this.ven_id = ven_id;
+	public void setVenID(Long venID) {
+		this.venID = venID;
 	}
-	public String getVen_metodoPago() {
-		return ven_metodoPago;
+	public String getVenMETODOPAGO() {
+		return venMETODOPAGO;
 	}
-	public void setVen_metodoPago(String ven_metodoPago) {
-		this.ven_metodoPago = ven_metodoPago;
+	public void setVenMETODOPAGO(String venMETODOPAGO) {
+		this.venMETODOPAGO = venMETODOPAGO;
 	}
 	public Producto getVen_idProducto() {
 		return ven_idProducto;
@@ -78,4 +78,5 @@ public class Venta implements Serializable {
 	public void setUsuario1(Usuario usuario1) {
 		this.usuario1 = usuario1;
 	}
+	
 }

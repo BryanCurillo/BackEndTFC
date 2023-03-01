@@ -27,10 +27,10 @@ public class Usuario implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "tru_idVendedor")
+	@OneToOne(mappedBy = "truIDVENDEDOR")
 	private Trueque trueque;
 	
-	@OneToOne(mappedBy = "tru_idComprador")
+	@OneToOne(mappedBy = "truIDCOMPRADOR")
 	private Trueque trueque1;
 	
 	@OneToOne(mappedBy = "usuario")
@@ -39,10 +39,10 @@ public class Usuario implements Serializable{
 	@OneToOne(mappedBy = "usuario1")
 	private Venta venta1;
 	
-	@OneToOne(mappedBy = "ofe_idOfertante")
+	@OneToOne(mappedBy = "ofeIDOFERTANTE")
 	private Oferta oferta;
 	
-	@OneToOne(mappedBy = "pub_idVendedor")
+	@OneToOne(mappedBy = "pubIDVENDEDOR")
 	private Publicacion publicacion;
 	
 	

@@ -26,24 +26,24 @@ public class Trueque implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "enca_idTrueque")
+	@OneToOne(mappedBy = "encaIDTRUEQUE")
 	private EncabezadoFactura encabezadoFactura;
 	
 	@OneToOne
-	@JoinColumn(name = "tru_idVendedor")
-	private Usuario tru_idVendedor;
+	@JoinColumn(name = "truIDVENDEDOR")
+	private Usuario truIDVENDEDOR;
 	
 	@OneToOne
-	@JoinColumn(name = "tru_idComprador")
-	private Usuario tru_idComprador;
+	@JoinColumn(name = "truIDCOMPRADOR")
+	private Usuario truIDCOMPRADOR;
 	
 	@OneToOne
-	@JoinColumn(name = "tru_idProducto")
+	@JoinColumn(name = "truIDPRODUCTO")
 	private Producto producto;
 	/**
 	 * 
 	 */
-	private Boolean tru_estado;
+	private Boolean truESTADO;
 	/**
 	 * 
 	 */
@@ -53,29 +53,24 @@ public class Trueque implements Serializable {
 	public void setTru_numero(Long tru_numero) {
 		this.tru_numero = tru_numero;
 	}
-	public Usuario getTru_idVendedor() {
-		return tru_idVendedor;
+	public Usuario getTruIDVENDEDOR() {
+		return truIDVENDEDOR;
 	}
-	public void setTru_idVendedor(Usuario tru_idVendedor) {
-		this.tru_idVendedor = tru_idVendedor;
+	public void setTruIDVENDEDOR(Usuario truIDVENDEDOR) {
+		this.truIDVENDEDOR = truIDVENDEDOR;
 	}
-	public Usuario getTru_idComprador() {
-		return tru_idComprador;
+	public Usuario getTruIDCOMPRADOR() {
+		return truIDCOMPRADOR;
 	}
-	public void setTru_idComprador(Usuario tru_idComprador) {
-		this.tru_idComprador = tru_idComprador;
+	public void setTruIDCOMPRADOR(Usuario truIDCOMPRADOR) {
+		this.truIDCOMPRADOR = truIDCOMPRADOR;
 	}
-	public Boolean getTru_estado() {
-		return tru_estado;
+	public Boolean getTruESTADO() {
+		return truESTADO;
 	}
-	public void setTru_estado(Boolean tru_estado) {
-		this.tru_estado = tru_estado;
+	public void setTruESTADO(Boolean truESTADO) {
+		this.truESTADO = truESTADO;
 	}
-	public Producto getProducto() {
-		return producto;
-	}
-	public void setProducto(Producto producto) {
-		this.producto = producto;
-	}
+	
 
 }

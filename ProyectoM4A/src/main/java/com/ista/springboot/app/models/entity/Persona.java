@@ -2,7 +2,6 @@ package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -21,77 +20,73 @@ public class Persona implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "per_id")
-	private Long per_id;
+	private Long perID;
 	/**
 	 * 
 	 */
-	@Column(unique = true,name = "per_cedula")
-	private String per_cedula;
+	private String perCEDULA;
 	/**
 	 * 
 	 */
-	private String per_nombre;
-	private String per_apellido;
-	private String per_correo;
-	private String per_direccion;
-	private String per_telefono;
-	private String per_sexo;
+	private String perNOMBRE;
+	private String perAPELLIDO;
+	private String perCORREO;
+	private String perDIRECCION;
+	private String perTELEFONO;
+	private String perSEXO;
 	/**
 	 * 
 	 */
 
-	@OneToOne(mappedBy = "usu_perCedula")
+	@OneToOne(mappedBy = "usuPerCEDULA")
 	private Usuario usuario;
-	
-	
-	public Long getPer_id() {
-		return per_id;
+	public Long getPerID() {
+		return perID;
 	}
-	public void setPer_id(Long per_id) {
-		this.per_id = per_id;
+	public void setPerID(Long perID) {
+		this.perID = perID;
 	}
-	public String getPer_cedula() {
-		return per_cedula;
+	public String getPerCEDULA() {
+		return perCEDULA;
 	}
-	public void setPer_cedula(String per_cedula) {
-		this.per_cedula = per_cedula;
+	public void setPerCEDULA(String perCEDULA) {
+		this.perCEDULA = perCEDULA;
 	}
-	public String getPer_nombre() {
-		return per_nombre;
+	public String getPerNOMBRE() {
+		return perNOMBRE;
 	}
-	public void setPer_nombre(String per_nombre) {
-		this.per_nombre = per_nombre;
+	public void setPerNOMBRE(String perNOMBRE) {
+		this.perNOMBRE = perNOMBRE;
 	}
-	public String getPer_apellido() {
-		return per_apellido;
+	public String getPerAPELLIDO() {
+		return perAPELLIDO;
 	}
-	public void setPer_apellido(String per_apellido) {
-		this.per_apellido = per_apellido;
+	public void setPerAPELLIDO(String perAPELLIDO) {
+		this.perAPELLIDO = perAPELLIDO;
 	}
-	public String getPer_correo() {
-		return per_correo;
+	public String getPerCORREO() {
+		return perCORREO;
 	}
-	public void setPer_correo(String per_correo) {
-		this.per_correo = per_correo;
+	public void setPerCORREO(String perCORREO) {
+		this.perCORREO = perCORREO;
 	}
-	public String getPer_direccion() {
-		return per_direccion;
+	public String getPerDIRECCION() {
+		return perDIRECCION;
 	}
-	public void setPer_direccion(String per_direccion) {
-		this.per_direccion = per_direccion;
+	public void setPerDIRECCION(String perDIRECCION) {
+		this.perDIRECCION = perDIRECCION;
 	}
-	public String getPer_telefono() {
-		return per_telefono;
+	public String getPerTELEFONO() {
+		return perTELEFONO;
 	}
-	public void setPer_telefono(String per_telefono) {
-		this.per_telefono = per_telefono;
+	public void setPerTELEFONO(String perTELEFONO) {
+		this.perTELEFONO = perTELEFONO;
 	}
-	public String getPer_sexo() {
-		return per_sexo;
+	public String getPerSEXO() {
+		return perSEXO;
 	}
-	public void setPer_sexo(String per_sexo) {
-		this.per_sexo = per_sexo;
+	public void setPerSEXO(String perSEXO) {
+		this.perSEXO = perSEXO;
 	}
 
 }
