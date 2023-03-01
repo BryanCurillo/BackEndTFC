@@ -26,70 +26,70 @@ public class Producto implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long prodID;
+	private Long ProdId;
 	/**
 	 * 
 	 */
-	private String prodNOMBRE;
-	private Double prodPRECIO;
-	private String prodDESCRIPCION;
-	private Byte prodFOTO;
+	private String ProdNombre;
+	private Double ProdPrecio;
+	private String ProdDescripcion;
+	private Byte ProdFoto;
 	
-	@OneToOne(mappedBy = "ven_idProducto")
-	private Venta ven_idProducto;
+	@OneToOne(mappedBy = "VenIdProducto")
+	private Venta VenIdProducto;
 	
-	@OneToOne(mappedBy = "detIDPRODUCTO")
-	private DetalleFactura detIDPRODUCTO;
+	@OneToOne(mappedBy = "DetIdProducto")
+	private DetalleFactura DetIdProducto;
 	
 	@OneToOne(mappedBy = "producto")
 	private Trueque trueque;
 	
-	@OneToOne(mappedBy = "pubIDPRODUCTO")
-	private Publicacion publicacion;
+	@OneToOne(mappedBy = "PubIdPublicacion")
+	private Publicacion PubIdPublicacion;
 	/**
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "catID")
-	private List<Categoria> prodIDCATEGORIA;
+	@JoinColumn(name = "CatId")
+	private List<Categoria> ProdIdCategoria;
 	/**
 	 * 
 	 */
-	public Long getProdID() {
-		return prodID;
+	public Long getProdId() {
+		return ProdId;
 	}
-	public void setProdID(Long prodID) {
-		this.prodID = prodID;
+	public void setProdId(Long prodId) {
+		ProdId = prodId;
 	}
-	public String getProdNOMBRE() {
-		return prodNOMBRE;
+	public String getProdNombre() {
+		return ProdNombre;
 	}
-	public void setProdNOMBRE(String prodNOMBRE) {
-		this.prodNOMBRE = prodNOMBRE;
+	public void setProdNombre(String prodNombre) {
+		ProdNombre = prodNombre;
 	}
-	public Double getProdPRECIO() {
-		return prodPRECIO;
+	public Double getProdPrecio() {
+		return ProdPrecio;
 	}
-	public void setProdPRECIO(Double prodPRECIO) {
-		this.prodPRECIO = prodPRECIO;
+	public void setProdPrecio(Double prodPrecio) {
+		ProdPrecio = prodPrecio;
 	}
-	public String getProdDESCRIPCION() {
-		return prodDESCRIPCION;
+	public String getProdDescripcion() {
+		return ProdDescripcion;
 	}
-	public void setProdDESCRIPCION(String prodDESCRIPCION) {
-		this.prodDESCRIPCION = prodDESCRIPCION;
+	public void setProdDescripcion(String prodDescripcion) {
+		ProdDescripcion = prodDescripcion;
 	}
-	public Byte getProdFOTO() {
-		return prodFOTO;
+	public Byte getProdFoto() {
+		return ProdFoto;
 	}
-	public void setProdFOTO(Byte prodFOTO) {
-		this.prodFOTO = prodFOTO;
+	public void setProdFoto(Byte prodFoto) {
+		ProdFoto = prodFoto;
 	}
-	public List<Categoria> getProdIDCATEGORIA() {
-		return prodIDCATEGORIA;
+	public List<Categoria> getProdIdCategoria() {
+		return ProdIdCategoria;
 	}
-	public void setProdIDCATEGORIA(List<Categoria> prodIDCATEGORIA) {
-		this.prodIDCATEGORIA = prodIDCATEGORIA;
+	public void setProdIdCategoria(List<Categoria> prodIdCategoria) {
+		ProdIdCategoria = prodIdCategoria;
 	}
-
+	
 }

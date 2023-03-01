@@ -27,59 +27,67 @@ public class Oferta implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long ofeID;
+	private Long OfeId;
 	/**
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "tru_numero")
-	private List<Trueque> ofeIDTRUEQUE;
+	private List<Trueque> OfeIdTrueque;
 	/***
 	 * 
 	 */
 	
-	@OneToOne(mappedBy = "oferta")
-	private ProductoOferta oferta;
+	@OneToOne(mappedBy = "PodIdOferta")
+	private ProductoOferta PodIdOferta;
 	
 	@OneToOne
-	@JoinColumn(name = "ofeIDOFERTANTE")
-	private Usuario ofeIDOFERTANTE;
+	@JoinColumn(name = "OfeIdOfertante")
+	private Usuario OfeIdOfertante;
 	
-	private Boolean ofeESTADO;
+	private Boolean OfeEstado;
 	/**
 	 * 
 	 */
 
-	public Long getOfeID() {
-		return ofeID;
+	public Long getOfeId() {
+		return OfeId;
 	}
 
-	public void setOfeID(Long ofeID) {
-		this.ofeID = ofeID;
+	public void setOfeId(Long ofeId) {
+		OfeId = ofeId;
 	}
 
-	public List<Trueque> getOfeIDTRUEQUE() {
-		return ofeIDTRUEQUE;
+	public List<Trueque> getOfeIdTrueque() {
+		return OfeIdTrueque;
 	}
 
-	public void setOfeIDTRUEQUE(List<Trueque> ofeIDTRUEQUE) {
-		this.ofeIDTRUEQUE = ofeIDTRUEQUE;
+	public void setOfeIdTrueque(List<Trueque> ofeIdTrueque) {
+		OfeIdTrueque = ofeIdTrueque;
 	}
 
-	public Usuario getOfeIDOFERTANTE() {
-		return ofeIDOFERTANTE;
+	public ProductoOferta getPodIdOferta() {
+		return PodIdOferta;
 	}
 
-	public void setOfeIDOFERTANTE(Usuario ofeIDOFERTANTE) {
-		this.ofeIDOFERTANTE = ofeIDOFERTANTE;
+	public void setPodIdOferta(ProductoOferta podIdOferta) {
+		PodIdOferta = podIdOferta;
 	}
 
-	public Boolean getOfeESTADO() {
-		return ofeESTADO;
+	public Usuario getOfeIdOfertante() {
+		return OfeIdOfertante;
 	}
 
-	public void setOfeESTADO(Boolean ofeESTADO) {
-		this.ofeESTADO = ofeESTADO;
+	public void setOfeIdOfertante(Usuario ofeIdOfertante) {
+		OfeIdOfertante = ofeIdOfertante;
+	}
+
+	public Boolean getOfeEstado() {
+		return OfeEstado;
+	}
+
+	public void setOfeEstado(Boolean ofeEstado) {
+		OfeEstado = ofeEstado;
 	}
 	
 }

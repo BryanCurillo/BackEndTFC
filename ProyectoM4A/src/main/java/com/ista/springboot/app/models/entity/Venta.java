@@ -28,23 +28,23 @@ public class Venta implements Serializable {
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "venIDPRODUCTO")
-	private Producto ven_idProducto;
+	@JoinColumn(name = "VenIdProducto")
+	private Producto VenIdProducto;
 	
-	@OneToOne(mappedBy = "encaIDVENTA")
-	private EncabezadoFactura encabezadoFactura;
+	@OneToOne(mappedBy = "EncaIdVenta")
+	private EncabezadoFactura EncaIdVenta;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "venIDCOMPRADOR")
-	private Usuario usuario;
+	@JoinColumn(name = "VenIdComprador")
+	private Usuario VenIdComprador;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "venIDVENDEDOR")
-	private Usuario usuario1;
+	@JoinColumn(name = "VenIdVendedor")
+	private Usuario VenIdVendedor;
 	/**
 	 * 
 	 */
@@ -60,23 +60,29 @@ public class Venta implements Serializable {
 	public void setVenMETODOPAGO(String venMETODOPAGO) {
 		this.venMETODOPAGO = venMETODOPAGO;
 	}
-	public Producto getVen_idProducto() {
-		return ven_idProducto;
+	public Producto getVenIdProducto() {
+		return VenIdProducto;
 	}
-	public void setVen_idProducto(Producto ven_idProducto) {
-		this.ven_idProducto = ven_idProducto;
+	public void setVenIdProducto(Producto venIdProducto) {
+		VenIdProducto = venIdProducto;
 	}
-	public Usuario getUsuario() {
-		return usuario;
+	public EncabezadoFactura getEncaIdVenta() {
+		return EncaIdVenta;
 	}
-	public void setUsuario(Usuario usuario) {
-		this.usuario = usuario;
+	public void setEncaIdVenta(EncabezadoFactura encaIdVenta) {
+		EncaIdVenta = encaIdVenta;
 	}
-	public Usuario getUsuario1() {
-		return usuario1;
+	public Usuario getVenIdComprador() {
+		return VenIdComprador;
 	}
-	public void setUsuario1(Usuario usuario1) {
-		this.usuario1 = usuario1;
+	public void setVenIdComprador(Usuario venIdComprador) {
+		VenIdComprador = venIdComprador;
+	}
+	public Usuario getVenIdVendedor() {
+		return VenIdVendedor;
+	}
+	public void setVenIdVendedor(Usuario venIdVendedor) {
+		VenIdVendedor = venIdVendedor;
 	}
 	
 }

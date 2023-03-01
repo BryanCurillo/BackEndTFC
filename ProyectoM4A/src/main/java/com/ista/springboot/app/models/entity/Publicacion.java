@@ -20,49 +20,49 @@ public class Publicacion implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pubID;
+	private Long PubId;
 	/**
 	 * 
 	 */
     @OneToOne
-    @JoinColumn(name = "pubIDVENDEDOR")
-	private Usuario pubIDVENDEDOR;
+    @JoinColumn(name = "PubIdVendedor")
+	private Usuario PubIdVendedor;
 	/**
 	 * 
 	 */
     @OneToOne
-    @JoinColumn(name = "pubIDPRODUCTO")
-	private Producto pubIDPRODUCTO;
+    @JoinColumn(name = "PubIdProducto")
+	private Producto PubIdProducto;
 	/**
 	 * 
 	 */
-	private String pubDESCRIPCION;
+	private String PubDescripcion;
 	/**
 	 * 
 	 */
-	public Long getPubID() {
-		return pubID;
+	public Long getPubId() {
+		return PubId;
 	}
-	public void setPubID(Long pubID) {
-		this.pubID = pubID;
+	public void setPubId(Long pubId) {
+		PubId = pubId;
 	}
-	public Usuario getPubIDVENDEDOR() {
-		return pubIDVENDEDOR;
+	public Usuario getPubIdVendedor() {
+		return PubIdVendedor;
 	}
-	public void setPubIDVENDEDOR(Usuario pubIDVENDEDOR) {
-		this.pubIDVENDEDOR = pubIDVENDEDOR;
+	public void setPubIdVendedor(Usuario pubIdVendedor) {
+		PubIdVendedor = pubIdVendedor;
 	}
-	public Producto getPubIDPRODUCTO() {
-		return pubIDPRODUCTO;
+	public Producto getPubIdProducto() {
+		return PubIdProducto;
 	}
-	public void setPubIDPRODUCTO(Producto pubIDPRODUCTO) {
-		this.pubIDPRODUCTO = pubIDPRODUCTO;
+	public void setPubIdProducto(Producto pubIdProducto) {
+		PubIdProducto = pubIdProducto;
 	}
-	public String getPubDESCRIPCION() {
-		return pubDESCRIPCION;
+	public String getPubDescripcion() {
+		return PubDescripcion;
 	}
-	public void setPubDESCRIPCION(String pubDESCRIPCION) {
-		this.pubDESCRIPCION = pubDESCRIPCION;
+	public void setPubDescripcion(String pubDescripcion) {
+		PubDescripcion = pubDescripcion;
 	}
 	
 }

@@ -22,55 +22,65 @@ public class Trueque implements Serializable {
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long tru_numero;
+	private Long TruNumero;
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "encaIDTRUEQUE")
-	private EncabezadoFactura encabezadoFactura;
+	@OneToOne(mappedBy = "EncaIdTrueque")
+	private EncabezadoFactura EncaIdTrueque;
 	
 	@OneToOne
-	@JoinColumn(name = "truIDVENDEDOR")
-	private Usuario truIDVENDEDOR;
+	@JoinColumn(name = "TruIdVendedor")
+	private Usuario TruIdVendedor;
 	
 	@OneToOne
-	@JoinColumn(name = "truIDCOMPRADOR")
-	private Usuario truIDCOMPRADOR;
+	@JoinColumn(name = "TruIdComprador")
+	private Usuario TruIdComprador;
 	
 	@OneToOne
-	@JoinColumn(name = "truIDPRODUCTO")
-	private Producto producto;
+	@JoinColumn(name = "TruIdProducto")
+	private Producto TruIdProducto;
 	/**
 	 * 
 	 */
-	private Boolean truESTADO;
+	private Boolean TruEstado;
 	/**
 	 * 
 	 */
-	public Long getTru_numero() {
-		return tru_numero;
+	public Long getTruNumero() {
+		return TruNumero;
 	}
-	public void setTru_numero(Long tru_numero) {
-		this.tru_numero = tru_numero;
+	public void setTruNumero(Long truNumero) {
+		TruNumero = truNumero;
 	}
-	public Usuario getTruIDVENDEDOR() {
-		return truIDVENDEDOR;
+	public EncabezadoFactura getEncaIdTrueque() {
+		return EncaIdTrueque;
 	}
-	public void setTruIDVENDEDOR(Usuario truIDVENDEDOR) {
-		this.truIDVENDEDOR = truIDVENDEDOR;
+	public void setEncaIdTrueque(EncabezadoFactura encaIdTrueque) {
+		EncaIdTrueque = encaIdTrueque;
 	}
-	public Usuario getTruIDCOMPRADOR() {
-		return truIDCOMPRADOR;
+	public Usuario getTruIdVendedor() {
+		return TruIdVendedor;
 	}
-	public void setTruIDCOMPRADOR(Usuario truIDCOMPRADOR) {
-		this.truIDCOMPRADOR = truIDCOMPRADOR;
+	public void setTruIdVendedor(Usuario truIdVendedor) {
+		TruIdVendedor = truIdVendedor;
 	}
-	public Boolean getTruESTADO() {
-		return truESTADO;
+	public Usuario getTruIdComprador() {
+		return TruIdComprador;
 	}
-	public void setTruESTADO(Boolean truESTADO) {
-		this.truESTADO = truESTADO;
+	public void setTruIdComprador(Usuario truIdComprador) {
+		TruIdComprador = truIdComprador;
 	}
-	
-
+	public Producto getTruIdProducto() {
+		return TruIdProducto;
+	}
+	public void setTruIdProducto(Producto truIdProducto) {
+		TruIdProducto = truIdProducto;
+	}
+	public Boolean getTruEstado() {
+		return TruEstado;
+	}
+	public void setTruEstado(Boolean truEstado) {
+		TruEstado = truEstado;
+	}
 }

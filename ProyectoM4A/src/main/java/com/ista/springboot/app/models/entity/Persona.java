@@ -20,73 +20,75 @@ public class Persona implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long perID;
+	private Long PerId;
 	/**
 	 * 
 	 */
-	private String perCEDULA;
+	private String PerCedula;
 	/**
 	 * 
 	 */
-	private String perNOMBRE;
-	private String perAPELLIDO;
-	private String perCORREO;
-	private String perDIRECCION;
-	private String perTELEFONO;
-	private String perSEXO;
+	private String PerNombre;
+	private String PerApellido;
+	private String PerCorreo;
+	private String PerDireccion;
+	private String PerTelefono;
+	private String PerSexo;
 	/**
 	 * 
 	 */
-
-	@OneToOne(mappedBy = "usuPerCEDULA")
-	private Usuario usuario;
-	public Long getPerID() {
-		return perID;
+	@OneToOne(mappedBy = "UsuPerCedula")
+	private Usuario UsuPerCedula;
+	/**
+	 * 
+	 */
+	public Long getPerId() {
+		return PerId;
 	}
-	public void setPerID(Long perID) {
-		this.perID = perID;
+	public void setPerId(Long perId) {
+		PerId = perId;
 	}
-	public String getPerCEDULA() {
-		return perCEDULA;
+	public String getPerCedula() {
+		return PerCedula;
 	}
-	public void setPerCEDULA(String perCEDULA) {
-		this.perCEDULA = perCEDULA;
+	public void setPerCedula(String perCedula) {
+		PerCedula = perCedula;
 	}
-	public String getPerNOMBRE() {
-		return perNOMBRE;
+	public String getPerNombre() {
+		return PerNombre;
 	}
-	public void setPerNOMBRE(String perNOMBRE) {
-		this.perNOMBRE = perNOMBRE;
+	public void setPerNombre(String perNombre) {
+		PerNombre = perNombre;
 	}
-	public String getPerAPELLIDO() {
-		return perAPELLIDO;
+	public String getPerApellido() {
+		return PerApellido;
 	}
-	public void setPerAPELLIDO(String perAPELLIDO) {
-		this.perAPELLIDO = perAPELLIDO;
+	public void setPerApellido(String perApellido) {
+		PerApellido = perApellido;
 	}
-	public String getPerCORREO() {
-		return perCORREO;
+	public String getPerCorreo() {
+		return PerCorreo;
 	}
-	public void setPerCORREO(String perCORREO) {
-		this.perCORREO = perCORREO;
+	public void setPerCorreo(String perCorreo) {
+		PerCorreo = perCorreo;
 	}
-	public String getPerDIRECCION() {
-		return perDIRECCION;
+	public String getPerDireccion() {
+		return PerDireccion;
 	}
-	public void setPerDIRECCION(String perDIRECCION) {
-		this.perDIRECCION = perDIRECCION;
+	public void setPerDireccion(String perDireccion) {
+		PerDireccion = perDireccion;
 	}
-	public String getPerTELEFONO() {
-		return perTELEFONO;
+	public String getPerTelefono() {
+		return PerTelefono;
 	}
-	public void setPerTELEFONO(String perTELEFONO) {
-		this.perTELEFONO = perTELEFONO;
+	public void setPerTelefono(String perTelefono) {
+		PerTelefono = perTelefono;
 	}
-	public String getPerSEXO() {
-		return perSEXO;
+	public String getPerSexo() {
+		return PerSexo;
 	}
-	public void setPerSEXO(String perSEXO) {
-		this.perSEXO = perSEXO;
+	public void setPerSexo(String perSexo) {
+		PerSexo = perSexo;
 	}
-
+	
 }

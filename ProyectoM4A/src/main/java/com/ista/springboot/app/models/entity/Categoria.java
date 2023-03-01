@@ -20,22 +20,21 @@ public class Categoria implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long catID;
-	private String catNOMBRE;
+	private Long CatId;
+	private String CatNombre;
 	/**
 	 * 
 	 */
-	public Long getCatID() {
-		return catID;
+	public Long getCatId() {
+		return CatId;
 	}
-	public void setCatID(Long catID) {
-		this.catID = catID;
+	public void setCatId(Long catId) {
+		CatId = catId;
 	}
-	public String getCatNOMBRE() {
-		return catNOMBRE;
+	public String getCatNombre() {
+		return CatNombre;
 	}
-	public void setCatNOMBRE(String catNOMBRE) {
-		this.catNOMBRE = catNOMBRE;
+	public void setCatNombre(String catNombre) {
+		CatNombre = catNombre;
 	}
-
 }

@@ -24,60 +24,63 @@ public class DetalleFactura implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long detID;
+	private Long DetId;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "detIDPRODUCTO")
-	private Producto detIDPRODUCTO;
+	@JoinColumn(name = "DetIdProducto")
+	private Producto DetIdProducto;
 	/**
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "enca_numero")
-	private List<EncabezadoFactura> detNUMENCABEZADO;
+	private List<EncabezadoFactura> DetNumEncabezado;
 	/**
 	 * 
 	 */
-	private Double detPRECIOUNITARIO;
-	private Long detCANTIDAD;
-	private Double detPRECIOTOTAL;
-	public Long getDetID() {
-		return detID;
+	private Double DetPrecioUnitario;
+	private Long DetCantidad;
+	private Double DetPrecioTotal;
+	/**
+	 * 
+	 */
+	public Long getDetId() {
+		return DetId;
 	}
-	public void setDetID(Long detID) {
-		this.detID = detID;
+	public void setDetId(Long detId) {
+		DetId = detId;
 	}
-	public Producto getDetIDPRODUCTO() {
-		return detIDPRODUCTO;
+	public Producto getDetIdProducto() {
+		return DetIdProducto;
 	}
-	public void setDetIDPRODUCTO(Producto detIDPRODUCTO) {
-		this.detIDPRODUCTO = detIDPRODUCTO;
+	public void setDetIdProducto(Producto detIdProducto) {
+		DetIdProducto = detIdProducto;
 	}
-	public List<EncabezadoFactura> getDetNUMENCABEZADO() {
-		return detNUMENCABEZADO;
+	public List<EncabezadoFactura> getDetNumEncabezado() {
+		return DetNumEncabezado;
 	}
-	public void setDetNUMENCABEZADO(List<EncabezadoFactura> detNUMENCABEZADO) {
-		this.detNUMENCABEZADO = detNUMENCABEZADO;
+	public void setDetNumEncabezado(List<EncabezadoFactura> detNumEncabezado) {
+		DetNumEncabezado = detNumEncabezado;
 	}
-	public Double getDetPRECIOUNITARIO() {
-		return detPRECIOUNITARIO;
+	public Double getDetPrecioUnitario() {
+		return DetPrecioUnitario;
 	}
-	public void setDetPRECIOUNITARIO(Double detPRECIOUNITARIO) {
-		this.detPRECIOUNITARIO = detPRECIOUNITARIO;
+	public void setDetPrecioUnitario(Double detPrecioUnitario) {
+		DetPrecioUnitario = detPrecioUnitario;
 	}
-	public Long getDetCANTIDAD() {
-		return detCANTIDAD;
+	public Long getDetCantidad() {
+		return DetCantidad;
 	}
-	public void setDetCANTIDAD(Long detCANTIDAD) {
-		this.detCANTIDAD = detCANTIDAD;
+	public void setDetCantidad(Long detCantidad) {
+		DetCantidad = detCantidad;
 	}
-	public Double getDetPRECIOTOTAL() {
-		return detPRECIOTOTAL;
+	public Double getDetPrecioTotal() {
+		return DetPrecioTotal;
 	}
-	public void setDetPRECIOTOTAL(Double detPRECIOTOTAL) {
-		this.detPRECIOTOTAL = detPRECIOTOTAL;
+	public void setDetPrecioTotal(Double detPrecioTotal) {
+		DetPrecioTotal = detPrecioTotal;
 	}
 	
 }

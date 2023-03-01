@@ -23,85 +23,118 @@ public class Usuario implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long usu_id;
+	private Long UsuId;
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "truIDVENDEDOR")
-	private Trueque trueque;
+	@OneToOne(mappedBy = "TruIdVendedor")
+	private Trueque TruIdVendedor;
 	
-	@OneToOne(mappedBy = "truIDCOMPRADOR")
-	private Trueque trueque1;
+	@OneToOne(mappedBy = "TruIdComprador")
+	private Trueque TruIdComprador;
 	
-	@OneToOne(mappedBy = "usuario")
-	private Venta venta;
+	@OneToOne(mappedBy = "VenIdComprador")
+	private Venta VenIdComprador;
 	
-	@OneToOne(mappedBy = "usuario1")
-	private Venta venta1;
+	@OneToOne(mappedBy = "VenIdVendedor")
+	private Venta VenIdVendedor;
 	
-	@OneToOne(mappedBy = "ofeIDOFERTANTE")
-	private Oferta oferta;
+	@OneToOne(mappedBy = "OfeIdOfertante")
+	private Oferta OfeIdOfertante;
 	
-	@OneToOne(mappedBy = "pubIDVENDEDOR")
-	private Publicacion publicacion;
+	@OneToOne(mappedBy = "PubIdVendedor")
+	private Publicacion PubIdVendedor;
 	
 	
     @OneToOne
-    @JoinColumn(name = "usu_perCedula")
-	private Persona usu_perCedula;
+    @JoinColumn(name = "UsuPerCedula")
+	private Persona UsuPerCedula;
     
     
     @OneToOne
-    @JoinColumn(name = "usu_idRol")
-	private Rol usu_idRol;
+    @JoinColumn(name = "UsuIdRol")
+	private Rol UsuIdRol;
 	/**
 	 * 
 	 */
 	@Column(unique = true)
-	private String usu_nombreUsuario;
-	private String contrasena;
-	private double usu_calificacion;
+	private String UsuNombreUsuario;
+	private String UsuContraUsuario;
+	private double UsuCalificacion;
 	/**
 	 * 
 	 */
-	public Long getUsu_id() {
-		return usu_id;
+	public Long getUsuId() {
+		return UsuId;
 	}
-	public void setUsu_id(Long usu_id) {
-		this.usu_id = usu_id;
+	public void setUsuId(Long usuId) {
+		UsuId = usuId;
 	}
-	public Persona getUsu_perCedula() {
-		return usu_perCedula;
+	public Trueque getTruIdVendedor() {
+		return TruIdVendedor;
 	}
-	public void setUsu_perCedula(Persona usu_perCedula) {
-		this.usu_perCedula = usu_perCedula;
+	public void setTruIdVendedor(Trueque truIdVendedor) {
+		TruIdVendedor = truIdVendedor;
 	}
-	public Rol getUsu_idRol() {
-		return usu_idRol;
+	public Trueque getTruIdComprador() {
+		return TruIdComprador;
 	}
-	public void setUsu_idRol(Rol usu_idRol) {
-		this.usu_idRol = usu_idRol;
+	public void setTruIdComprador(Trueque truIdComprador) {
+		TruIdComprador = truIdComprador;
 	}
-	public String getUsu_nombreUsuario() {
-		return usu_nombreUsuario;
+	public Venta getVenIdComprador() {
+		return VenIdComprador;
 	}
-	public void setUsu_nombreUsuario(String usu_nombreUsuario) {
-		this.usu_nombreUsuario = usu_nombreUsuario;
+	public void setVenIdComprador(Venta venIdComprador) {
+		VenIdComprador = venIdComprador;
 	}
-	public String getContrasena() {
-		return contrasena;
+	public Venta getVenIdVendedor() {
+		return VenIdVendedor;
 	}
-	public void setContrasena(String contrasena) {
-		this.contrasena = contrasena;
+	public void setVenIdVendedor(Venta venIdVendedor) {
+		VenIdVendedor = venIdVendedor;
 	}
-	public double getUsu_calificacion() {
-		return usu_calificacion;
+	public Oferta getOfeIdOfertante() {
+		return OfeIdOfertante;
 	}
-	public void setUsu_calificacion(double usu_calificacion) {
-		this.usu_calificacion = usu_calificacion;
+	public void setOfeIdOfertante(Oferta ofeIdOfertante) {
+		OfeIdOfertante = ofeIdOfertante;
 	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}	
+	public Publicacion getPubIdVendedor() {
+		return PubIdVendedor;
+	}
+	public void setPubIdVendedor(Publicacion pubIdVendedor) {
+		PubIdVendedor = pubIdVendedor;
+	}
+	public Persona getUsuPerCedula() {
+		return UsuPerCedula;
+	}
+	public void setUsuPerCedula(Persona usuPerCedula) {
+		UsuPerCedula = usuPerCedula;
+	}
+	public Rol getUsuIdRol() {
+		return UsuIdRol;
+	}
+	public void setUsuIdRol(Rol usuIdRol) {
+		UsuIdRol = usuIdRol;
+	}
+	public String getUsuNombreUsuario() {
+		return UsuNombreUsuario;
+	}
+	public void setUsuNombreUsuario(String usuNombreUsuario) {
+		UsuNombreUsuario = usuNombreUsuario;
+	}
+	public String getUsuContraUsuario() {
+		return UsuContraUsuario;
+	}
+	public void setUsuContraUsuario(String usuContraUsuario) {
+		UsuContraUsuario = usuContraUsuario;
+	}
+	public double getUsuCalificacion() {
+		return UsuCalificacion;
+	}
+	public void setUsuCalificacion(double usuCalificacion) {
+		UsuCalificacion = usuCalificacion;
+	}
 
 }

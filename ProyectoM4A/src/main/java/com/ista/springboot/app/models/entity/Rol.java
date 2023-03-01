@@ -20,32 +20,35 @@ public class Rol implements Serializable{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long rolID;
+	private Long RolId;
 	
-	private String rolNOMBRE;
+	private String RolNombre;
 
 	
-	@OneToOne(mappedBy = "usu_idRol")
-	private Usuario usuario;
+	@OneToOne(mappedBy = "UsuIdRol")
+	private Usuario UsuIdRol;
+	/**
+	 * 
+	 */
 
 
-	public Long getRolID() {
-		return rolID;
+	public Long getRolId() {
+		return RolId;
 	}
 
 
-	public void setRolID(Long rolID) {
-		this.rolID = rolID;
+	public void setRolId(Long rolId) {
+		RolId = rolId;
 	}
 
 
-	public String getRolNOMBRE() {
-		return rolNOMBRE;
+	public String getRolNombre() {
+		return RolNombre;
 	}
 
 
-	public void setRolNOMBRE(String rolNOMBRE) {
-		this.rolNOMBRE = rolNOMBRE;
+	public void setRolNombre(String rolNombre) {
+		RolNombre = rolNombre;
 	}
 
 }

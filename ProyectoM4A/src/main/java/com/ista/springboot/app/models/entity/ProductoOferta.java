@@ -22,58 +22,58 @@ public class ProductoOferta implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long poID;
+	private Long PoId;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "poIDOFERTA")
-	private Oferta oferta;
+	@JoinColumn(name = "PodIdOferta")
+	private Oferta PodIdOferta;
 	/**
 	 * 
 	 */
-	private String poNOMBRE;
-	private Double poPRECIO;
-	private Byte poFOTO;
-	private String poDESCRIPCION;
+	private String PoNombre;
+	private Double PoPrecio;
+	private Byte PoFoto;
+	private String PoDescripcion;
 	/**
 	 * 
 	 */
-	public Long getPoID() {
-		return poID;
+	public Long getPoId() {
+		return PoId;
 	}
-	public void setPoID(Long poID) {
-		this.poID = poID;
+	public void setPoId(Long poId) {
+		PoId = poId;
 	}
-	public Oferta getOferta() {
-		return oferta;
+	public Oferta getPodIdOferta() {
+		return PodIdOferta;
 	}
-	public void setOferta(Oferta oferta) {
-		this.oferta = oferta;
+	public void setPodIdOferta(Oferta podIdOferta) {
+		PodIdOferta = podIdOferta;
 	}
-	public String getPoNOMBRE() {
-		return poNOMBRE;
+	public String getPoNombre() {
+		return PoNombre;
 	}
-	public void setPoNOMBRE(String poNOMBRE) {
-		this.poNOMBRE = poNOMBRE;
+	public void setPoNombre(String poNombre) {
+		PoNombre = poNombre;
 	}
-	public Double getPoPRECIO() {
-		return poPRECIO;
+	public Double getPoPrecio() {
+		return PoPrecio;
 	}
-	public void setPoPRECIO(Double poPRECIO) {
-		this.poPRECIO = poPRECIO;
+	public void setPoPrecio(Double poPrecio) {
+		PoPrecio = poPrecio;
 	}
-	public Byte getPoFOTO() {
-		return poFOTO;
+	public Byte getPoFoto() {
+		return PoFoto;
 	}
-	public void setPoFOTO(Byte poFOTO) {
-		this.poFOTO = poFOTO;
+	public void setPoFoto(Byte poFoto) {
+		PoFoto = poFoto;
 	}
-	public String getPoDESCRIPCION() {
-		return poDESCRIPCION;
+	public String getPoDescripcion() {
+		return PoDescripcion;
 	}
-	public void setPoDESCRIPCION(String poDESCRIPCION) {
-		this.poDESCRIPCION = poDESCRIPCION;
+	public void setPoDescripcion(String poDescripcion) {
+		PoDescripcion = poDescripcion;
 	}
 	
 }

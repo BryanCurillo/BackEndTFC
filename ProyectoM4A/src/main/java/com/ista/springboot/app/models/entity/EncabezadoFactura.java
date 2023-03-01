@@ -28,66 +28,68 @@ public class EncabezadoFactura implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long encaID;
+	private Long EncaId;
 	/**
 	 * 
 	 */
     @OneToOne
-    @JoinColumn(name = "encaIDTRUEQUE")
-    private Trueque encaIDTRUEQUE;
+    @JoinColumn(name = "EncaIdTrueque")
+    private Trueque EncaIdTrueque;
     /**
      * 
      */
     @OneToOne
-    @JoinColumn(name = "encaIDVENTA")
-    private Venta encaIDVENTA;
+    @JoinColumn(name = "EncaIdVenta")
+    private Venta EncaIdVenta;
     /**
      * 
      */
-    @OneToOne(mappedBy = "encabezadoFactura")
-    private PieFactura pieFACTURA;
+    @OneToOne(mappedBy = "EncabezadoFactura")
+    private PieFactura PieFactura;
     /**
      * 
      */
-	@Column (name="enca_fecha")
+	@Column (name="EncaFecha")
 	@Temporal(TemporalType.DATE)
-    private Date encaFECHA;
+    private Date EncaFecha;
     /**
      * 
      */
 	@PrePersist
 	public void prePersist(){
-		encaFECHA = new Date();
+		EncaFecha = new Date();
 	}
-	public Long getEncaID() {
-		return encaID;
+    /**
+     * 
+     */
+	public Long getEncaId() {
+		return EncaId;
 	}
-	public void setEncaID(Long encaID) {
-		this.encaID = encaID;
+	public void setEncaId(Long encaId) {
+		EncaId = encaId;
 	}
-	public Trueque getEncaIDTRUEQUE() {
-		return encaIDTRUEQUE;
+	public Trueque getEncaIdTrueque() {
+		return EncaIdTrueque;
 	}
-	public void setEncaIDTRUEQUE(Trueque encaIDTRUEQUE) {
-		this.encaIDTRUEQUE = encaIDTRUEQUE;
+	public void setEncaIdTrueque(Trueque encaIdTrueque) {
+		EncaIdTrueque = encaIdTrueque;
 	}
-	public Venta getEncaIDVENTA() {
-		return encaIDVENTA;
+	public Venta getEncaIdVenta() {
+		return EncaIdVenta;
 	}
-	public void setEncaIDVENTA(Venta encaIDVENTA) {
-		this.encaIDVENTA = encaIDVENTA;
+	public void setEncaIdVenta(Venta encaIdVenta) {
+		EncaIdVenta = encaIdVenta;
 	}
-	public PieFactura getPieFACTURA() {
-		return pieFACTURA;
+	public PieFactura getPieFactura() {
+		return PieFactura;
 	}
-	public void setPieFACTURA(PieFactura pieFACTURA) {
-		this.pieFACTURA = pieFACTURA;
+	public void setPieFactura(PieFactura pieFactura) {
+		PieFactura = pieFactura;
 	}
-	public Date getEncaFECHA() {
-		return encaFECHA;
+	public Date getEncaFecha() {
+		return EncaFecha;
 	}
-	public void setEncaFECHA(Date encaFECHA) {
-		this.encaFECHA = encaFECHA;
+	public void setEncaFecha(Date encaFecha) {
+		EncaFecha = encaFecha;
 	}
-
 }

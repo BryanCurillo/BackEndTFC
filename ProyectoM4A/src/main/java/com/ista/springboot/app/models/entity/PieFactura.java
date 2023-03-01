@@ -23,43 +23,43 @@ public class PieFactura implements Serializable{
 	 */
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long pieID;
+	private Long PieId;
 	
-	private Double pieSUBTOTAL;
-	private Double pieTOTAL;
-	private Double piePRECIOENVIO;
+	private Double PieSubTotal;
+	private Double PieTotal;
+	private Double PiePrecioEnvio;
 	/**
 	 * 
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "pieIDENCABEZADO")
+	@JoinColumn(name = "PieIdEncabezado")
 	private EncabezadoFactura encabezadoFactura;
 	/**
 	 * 
 	 */
-	public Long getPieID() {
-		return pieID;
+	public Long getPieId() {
+		return PieId;
 	}
-	public void setPieID(Long pieID) {
-		this.pieID = pieID;
+	public void setPieId(Long pieId) {
+		PieId = pieId;
 	}
-	public Double getPieSUBTOTAL() {
-		return pieSUBTOTAL;
+	public Double getPieSubTotal() {
+		return PieSubTotal;
 	}
-	public void setPieSUBTOTAL(Double pieSUBTOTAL) {
-		this.pieSUBTOTAL = pieSUBTOTAL;
+	public void setPieSubTotal(Double pieSubTotal) {
+		PieSubTotal = pieSubTotal;
 	}
-	public Double getPieTOTAL() {
-		return pieTOTAL;
+	public Double getPieTotal() {
+		return PieTotal;
 	}
-	public void setPieTOTAL(Double pieTOTAL) {
-		this.pieTOTAL = pieTOTAL;
+	public void setPieTotal(Double pieTotal) {
+		PieTotal = pieTotal;
 	}
-	public Double getPiePRECIOENVIO() {
-		return piePRECIOENVIO;
+	public Double getPiePrecioEnvio() {
+		return PiePrecioEnvio;
 	}
-	public void setPiePRECIOENVIO(Double piePRECIOENVIO) {
-		this.piePRECIOENVIO = piePRECIOENVIO;
+	public void setPiePrecioEnvio(Double piePrecioEnvio) {
+		PiePrecioEnvio = piePrecioEnvio;
 	}
 	public EncabezadoFactura getEncabezadoFactura() {
 		return encabezadoFactura;
