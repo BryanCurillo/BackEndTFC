@@ -15,7 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Categoria;
 import com.ista.springboot.app.models.services.ICategoriaService;
-//pene psicologico
+
+//HOLA MARI
 @RestController
 @RequestMapping("/api")
 public class CategoriaRestController {
