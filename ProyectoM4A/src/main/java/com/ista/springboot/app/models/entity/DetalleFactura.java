@@ -35,7 +35,7 @@ public class DetalleFactura implements Serializable{
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "enca_numero")
+	@JoinColumn(name = "EncaId")
 	private List<EncabezadoFactura> DetNumEncabezado;
 	/**
 	 * 

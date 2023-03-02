@@ -2,7 +2,6 @@ package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -31,9 +30,9 @@ public class PieFactura implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToOne(cascade = CascadeType.ALL)
+	@OneToOne
 	@JoinColumn(name = "PieIdEncabezado")
-	private EncabezadoFactura encabezadoFactura;
+	private EncabezadoFactura EncabezadoFactura;
 	/**
 	 * 
 	 */
@@ -62,10 +61,9 @@ public class PieFactura implements Serializable{
 		PiePrecioEnvio = piePrecioEnvio;
 	}
 	public EncabezadoFactura getEncabezadoFactura() {
-		return encabezadoFactura;
+		return EncabezadoFactura;
 	}
 	public void setEncabezadoFactura(EncabezadoFactura encabezadoFactura) {
-		this.encabezadoFactura = encabezadoFactura;
+		EncabezadoFactura = encabezadoFactura;
 	}
-	
 }

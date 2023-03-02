@@ -32,7 +32,7 @@ public class Oferta implements Serializable{
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "tru_numero")
+	@JoinColumn(name = "TruNumero")
 	private List<Trueque> OfeIdTrueque;
 	/***
 	 * 
