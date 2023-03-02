@@ -23,7 +23,7 @@ public class Venta implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long venID;
-	private String venMETODOPAGO;
+	private String venMetodoPago;
 	/**
 	 * 
 	 */
@@ -54,11 +54,11 @@ public class Venta implements Serializable {
 	public void setVenID(Long venID) {
 		this.venID = venID;
 	}
-	public String getVenMETODOPAGO() {
-		return venMETODOPAGO;
+	public String getVenMetodoPago() {
+		return venMetodoPago;
 	}
-	public void setVenMETODOPAGO(String venMETODOPAGO) {
-		this.venMETODOPAGO = venMETODOPAGO;
+	public void setVenMetodoPago(String venMetodoPago) {
+		this.venMetodoPago = venMetodoPago;
 	}
 	public Producto getVenIdProducto() {
 		return VenIdProducto;

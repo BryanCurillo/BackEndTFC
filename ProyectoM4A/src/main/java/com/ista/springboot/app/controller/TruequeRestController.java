@@ -46,7 +46,14 @@ public class TruequeRestController {
 	public Trueque update(@RequestBody Trueque trueque , @PathVariable Long id) {
 		
 		Trueque truequeACTUAL = truequeService.findById(id);
-
+		truequeACTUAL.setEncaIdTrueque(trueque.getEncaIdTrueque());
+		truequeACTUAL.setTruEstado(trueque.getTruEstado());
+		truequeACTUAL.setTruIdComprador(trueque.getTruIdComprador());
+		truequeACTUAL.setTruIdProducto(trueque.getTruIdProducto());
+		truequeACTUAL.setTruIdVendedor(trueque.getTruIdVendedor());
+		truequeACTUAL.setTruNumero(trueque.getTruNumero());
+		
+		
 		return truequeService.save(truequeACTUAL);
 	}
 

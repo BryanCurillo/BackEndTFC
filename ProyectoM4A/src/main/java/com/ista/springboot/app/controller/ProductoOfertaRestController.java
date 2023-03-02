@@ -45,11 +45,13 @@ public class ProductoOfertaRestController {
 	public ProductoOferta update(@RequestBody ProductoOferta productoOferta, @PathVariable Long id) {
 
 		ProductoOferta productoOfertaACTUAL = ofertaService.findById(id);
-
-		//
-		//
-		//
-		//
+		productoOfertaACTUAL.setPoDescripcion(productoOferta.getPoDescripcion());
+		productoOfertaACTUAL.setPodIdOferta(productoOferta.getPodIdOferta());
+		productoOfertaACTUAL.setPoFoto(productoOferta.getPoFoto());
+		productoOfertaACTUAL.setPoId(productoOferta.getPoId());
+		productoOfertaACTUAL.setPoNombre(productoOferta.getPoNombre());
+		productoOfertaACTUAL.setPoPrecio(productoOferta.getPoPrecio());
+		
 		
 		return ofertaService.save(productoOfertaACTUAL);
 	}

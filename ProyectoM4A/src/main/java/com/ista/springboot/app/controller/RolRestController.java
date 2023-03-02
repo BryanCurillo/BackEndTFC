@@ -46,6 +46,8 @@ public class RolRestController {
 	public Rol update(@RequestBody Rol rol , @PathVariable Long id) {
 		
 		Rol rolACTUAL = rolService.findById(id);
+		rolACTUAL.setRolId(rol.getRolId());
+		rolACTUAL.setRolNombre(rol.getRolNombre());
 
 		return rolService.save(rolACTUAL);
 	}

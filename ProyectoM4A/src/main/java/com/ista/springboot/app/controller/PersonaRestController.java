@@ -52,14 +52,15 @@ public class PersonaRestController {
 
 		Persona personaactual = iPersonaService.findById(id);
 
-		personaactual.setPer_id(persona.getPer_id());
-		personaactual.setPer_nombre(persona.getPer_nombre());
-		personaactual.setPer_cedula(persona.getPer_cedula());
-		personaactual.setPer_apellido(persona.getPer_apellido());
-		personaactual.setPer_correo(persona.getPer_correo());
-		personaactual.setPer_direccion(persona.getPer_direccion());
-		personaactual.setPer_telefono(persona.getPer_telefono());
-		personaactual.setPer_sexo(persona.getPer_sexo());
+		personaactual.setPerApellido(persona.getPerApellido());
+		personaactual.setPerCedula(persona.getPerCedula());
+		personaactual.setPerCorreo(persona.getPerCorreo());
+		personaactual.setPerDireccion(persona.getPerDireccion());
+		personaactual.setPerId(persona.getPerId());
+		personaactual.setPerNombre(persona.getPerNombre());
+		personaactual.setPerSexo(persona.getPerSexo());
+		personaactual.setPerTelefono(persona.getPerTelefono());		
+
 
 		return iPersonaService.save(persona);
 

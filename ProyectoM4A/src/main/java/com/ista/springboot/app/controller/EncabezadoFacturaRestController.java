@@ -45,7 +45,12 @@ public class EncabezadoFacturaRestController {
 	public EncabezadoFactura update(@RequestBody EncabezadoFactura encabezadoFactura, @PathVariable Long id) {
 		
 		EncabezadoFactura encabezadoFacturaACTUAL = encabezadoService.findById(id);
-
+		encabezadoFacturaACTUAL.setEncaFecha(encabezadoFactura.getEncaFecha());
+		encabezadoFacturaACTUAL.setEncaId(encabezadoFactura.getEncaId());
+		encabezadoFacturaACTUAL.setEncaIdTrueque(encabezadoFactura.getEncaIdTrueque());
+		encabezadoFacturaACTUAL.setEncaIdVenta(encabezadoFactura.getEncaIdVenta());
+		encabezadoFacturaACTUAL.setPieFactura(encabezadoFactura.getPieFactura());
+		
 		return encabezadoService.save(encabezadoFacturaACTUAL);
 	}
 

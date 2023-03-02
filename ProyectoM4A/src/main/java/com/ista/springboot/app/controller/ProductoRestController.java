@@ -45,11 +45,12 @@ public class ProductoRestController {
 	public Producto update(@RequestBody Producto producto, @PathVariable Long id) {
 		
 		Producto productoACTUAL = productoService.findById(id);
-
-		//
-		//
-		//
-		//
+		productoACTUAL.setProdDescripcion(productoACTUAL.getProdDescripcion());
+		productoACTUAL.setProdFoto(productoACTUAL.getProdFoto());
+		productoACTUAL.setProdId(productoACTUAL.getProdId());
+		productoACTUAL.setProdIdCategoria(productoACTUAL.getProdIdCategoria());
+		productoACTUAL.setProdNombre(productoACTUAL.getProdNombre());
+		productoACTUAL.setProdPrecio(productoACTUAL.getProdPrecio());
 		
 		return productoService.save(productoACTUAL);
 	}

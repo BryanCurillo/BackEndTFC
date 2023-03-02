@@ -46,7 +46,19 @@ public class UsuarioRestController {
 	public Usuario update(@RequestBody Usuario usuario, @PathVariable Long id) {
 		
 		Usuario usuarioACTUAL = usuarioService.findById(id);
-
+		usuarioACTUAL.setOfeIdOfertante(usuario.getOfeIdOfertante());
+		usuarioACTUAL.setPubIdVendedor(usuario.getPubIdVendedor());
+		usuarioACTUAL.setTruIdComprador(usuario.getTruIdComprador());
+		usuarioACTUAL.setTruIdVendedor(usuario.getTruIdVendedor());
+		usuarioACTUAL.setUsuCalificacion(usuario.getUsuCalificacion());
+		usuarioACTUAL.setUsuContraUsuario(usuario.getUsuContraUsuario());
+		usuarioACTUAL.setUsuId(usuario.getUsuId());
+		usuarioACTUAL.setUsuIdRol(usuario.getUsuIdRol());
+		usuarioACTUAL.setUsuNombreUsuario(usuario.getUsuNombreUsuario());
+		usuarioACTUAL.setUsuPerCedula(usuario.getUsuPerCedula());
+		usuarioACTUAL.setVenIdComprador(usuario.getVenIdComprador());
+		usuarioACTUAL.setVenIdVendedor(usuario.getVenIdVendedor());
+		
 		return usuarioService.save(usuarioACTUAL);
 	}
 	

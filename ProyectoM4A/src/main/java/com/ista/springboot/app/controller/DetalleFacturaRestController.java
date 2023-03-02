@@ -50,10 +50,14 @@ public class DetalleFacturaRestController {
 	public DetalleFactura update(@RequestBody DetalleFactura detalleFactura, @PathVariable Long id) {
 
 		DetalleFactura detalleFacturaACTUAL = detalleFacturaService.findById(id);
+		detalleFacturaACTUAL.setDetId(detalleFactura.getDetId());
+		detalleFacturaACTUAL.setDetCantidad(detalleFactura.getDetCantidad());
+		detalleFacturaACTUAL.setDetIdProducto(detalleFactura.getDetIdProducto());
+		detalleFacturaACTUAL.setDetNumEncabezado(detalleFactura.getDetNumEncabezado());
+		detalleFacturaACTUAL.setDetPrecioTotal(detalleFactura.getDetPrecioTotal());
+		detalleFacturaACTUAL.setDetPrecioUnitario(detalleFactura.getDetPrecioUnitario());
 
-		//
-		//
-		//
+
 
 		return detalleFacturaService.save(detalleFacturaACTUAL);
 	}

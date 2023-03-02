@@ -45,11 +45,11 @@ public class PieFacturaRestController {
 	public PieFactura update(@RequestBody PieFactura pieFactura, @PathVariable Long id) {
 
 		PieFactura pieFacturaACTUAL = pieFacturaService.findById(id);
-
-		//
-		//
-		//
-		//
+		pieFacturaACTUAL.setEncabezadoFactura(pieFactura.getEncabezadoFactura());
+		pieFacturaACTUAL.setPieId(pieFactura.getPieId());
+		pieFacturaACTUAL.setPiePrecioEnvio(pieFactura.getPiePrecioEnvio());
+		pieFacturaACTUAL.setPieSubTotal(pieFactura.getPieSubTotal());
+		pieFacturaACTUAL.setPieTotal(pieFactura.getPieTotal());
 		
 		return pieFacturaService.save(pieFacturaACTUAL);
 	}

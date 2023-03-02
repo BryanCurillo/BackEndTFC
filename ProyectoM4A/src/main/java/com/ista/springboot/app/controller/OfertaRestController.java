@@ -45,11 +45,11 @@ public class OfertaRestController {
 	public Oferta update(@RequestBody Oferta oferta, @PathVariable Long id) {
 
 		Oferta ofertaACTUAL = ofertaService.findById(id);
-
-		//
-		//
-		//
-		//
+		ofertaACTUAL.setOfeEstado(oferta.getOfeEstado());
+		ofertaACTUAL.setOfeId(oferta.getOfeId());
+		ofertaACTUAL.setOfeIdOfertante(oferta.getOfeIdOfertante());
+		ofertaACTUAL.setOfeIdTrueque(oferta.getOfeIdTrueque());
+		ofertaACTUAL.setPodIdOferta(oferta.getPodIdOferta());
 
 		return ofertaService.save(ofertaACTUAL);
 	}

@@ -46,8 +46,8 @@ public class CategoriaRestController {
 	// EDITAR
 	public Categoria update(@RequestBody Categoria categoria,@PathVariable Long id) {
 		Categoria categoriaActual = categoriaService.findById(id);
-		//
-		//ES UNA PRUEBA DEL GIT
+		categoriaActual.setCatId(categoria.getCatId());
+		categoriaActual.setCatNombre(categoria.getCatNombre());
 		
 		return categoriaService.save(categoria);
 	}

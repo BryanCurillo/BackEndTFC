@@ -45,11 +45,10 @@ public class PublicacionRestController {
 	public Publicacion update(@RequestBody Publicacion publicacion , @PathVariable Long id) {
 		
 		Publicacion publicacionACTUAL = publicacionService.findById(id);
-
-		//
-		//
-		//
-		//
+		publicacionACTUAL.setPubDescripcion(publicacion.getPubDescripcion());
+		publicacionACTUAL.setPubId(publicacion.getPubId());
+		publicacionACTUAL.setPubIdProducto(publicacion.getPubIdProducto());
+		publicacionACTUAL.setPubIdVendedor(publicacion.getPubIdVendedor());		
 		
 		return publicacionService.save(publicacionACTUAL);
 	}
