@@ -3,19 +3,33 @@
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Usuario;
 import com.ista.springboot.app.models.services.IUsuarioService;
 
+@CrossOrigin(origins="http://localhost:4200")
+@RestController
+@RequestMapping("/api")
 public class UsuarioRestController {
+	/**
+	 * 
+	 * temporal para areglar el error 001
+	 * 
+	 * 
+	 */
+	@Qualifier("usuarioServiceImpl")
 
 	@Autowired
 	public IUsuarioService usuarioService;
@@ -68,4 +82,18 @@ public class UsuarioRestController {
 	public void delete(@PathVariable Long id) {
 		usuarioService.delete(id);
 	}
+	
+	//METODOS PERSONALIZADOS
+	
+	
+	@GetMapping("/Usuario/{user}/{pass}")
+	public Usuario show(@PathVariable String user,@PathVariable String pass) {
+		
+		return usuarioService.findByUserPass(user, pass);
+		
+
+	}
+	
+	
+	
 }

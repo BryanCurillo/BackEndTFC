@@ -37,4 +37,16 @@ public class VentaServiceImpl implements IUsuarioService{
 		dao.deleteById(Id);
 	}
 
+	/**
+	 * 
+	 * REVISAR OCACIONES PROBLEMAS 001
+	 * 
+	 * 
+	 */
+	@Override
+	public Usuario findByUserPass(String usu_nombreUsuario, String contrasena) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

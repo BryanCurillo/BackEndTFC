@@ -37,4 +37,12 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		dao.deleteById(Id);
 	}
 
+	//metodos personalizados
+	@Override
+	@Transactional(readOnly = true)
+	public Usuario findByUserPass(String usu_nombreUsuario, String contrasena) {
+		// TODO Auto-generated method stub
+		return dao.findByUsuNombreUsuarioAndUsuContraUsuario(usu_nombreUsuario, contrasena);
+	}
+
 }
