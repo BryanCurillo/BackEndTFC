@@ -136,14 +136,23 @@ public class Usuario implements Serializable{
 	public void setUsuCalificacion(double usuCalificacion) {
 		UsuCalificacion = usuCalificacion;
 	}
+	
+	//contructores para enviar usuario personalizados
 	public Usuario() {
 		super();
 	}
+	
 	public Usuario(String usuNombreUsuario, String usuContraUsuario) {
 		super();
 		UsuNombreUsuario = usuNombreUsuario;
 		UsuContraUsuario = usuContraUsuario;
 	}
+	
+	public Usuario(String usuNombreUsuario) {
+		super();
+		UsuNombreUsuario = usuNombreUsuario;
+	}
 
+	
 	
 }

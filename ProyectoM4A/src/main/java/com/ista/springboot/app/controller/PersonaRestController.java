@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.ista.springboot.app.models.entity.Persona;
 import com.ista.springboot.app.models.services.IPersonaService;
 
+@CrossOrigin(origins="http://localhost:4200")
 @RestController
 @RequestMapping("/api")
 public class PersonaRestController {
@@ -64,5 +66,20 @@ public class PersonaRestController {
 
 		return iPersonaService.save(persona);
 
+	}
+	
+	
+	//metodos personalizados
+	
+	@GetMapping("/persona/existG/{gmail}")
+	public Boolean showU(@PathVariable String gmail) {
+		return iPersonaService.existByGmail(gmail);
+		
+
+	}
+	
+	@GetMapping("/persona/existD/{dni}")
+	public Boolean showD(@PathVariable String dni) {
+		return iPersonaService.existByDni(dni);
 	}
 }

@@ -88,12 +88,17 @@ public class UsuarioRestController {
 	
 	@GetMapping("/Usuario/{user}/{pass}")
 	public Usuario show(@PathVariable String user,@PathVariable String pass) {
-		
+		System.out.println(user+' '+pass);
 		return usuarioService.findByUserPass(user, pass);
 		
 
 	}
 	
-	
+	@GetMapping("/Usuario/exist/{user}")
+	public Boolean show(@PathVariable String user) {
+		return usuarioService.existByUser(user);
+		
+
+	}
 	
 }

@@ -49,4 +49,10 @@ public class VentaServiceImpl implements IUsuarioService{
 		return null;
 	}
 
+	@Override
+	public Boolean existByUser(String usu_nombreUsuario) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

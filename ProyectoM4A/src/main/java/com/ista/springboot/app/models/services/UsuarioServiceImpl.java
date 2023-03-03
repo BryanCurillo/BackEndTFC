@@ -36,6 +36,8 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	public void delete(Long Id) {
 		dao.deleteById(Id);
 	}
+	
+	
 
 	//metodos personalizados
 	@Override
@@ -44,5 +46,14 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return dao.findByUsuNombreUsuarioAndUsuContraUsuario(usu_nombreUsuario, contrasena);
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Boolean existByUser(String usu_nombreUsuario) {
+		// TODO Auto-generated method stub
+		return dao.existByUsuNombreUsuario(usu_nombreUsuario);
+	}
+	
+	
 
 }

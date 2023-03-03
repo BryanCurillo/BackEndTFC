@@ -16,4 +16,8 @@ public interface IUsuarioService {
 	
 	//añado en metod personalizado con el nombre que quiera
 	public  Usuario findByUserPass(String usu_nombreUsuario, String contrasena);
+	
+	
+	public  Boolean existByUser(String usu_nombreUsuario);
 }
+

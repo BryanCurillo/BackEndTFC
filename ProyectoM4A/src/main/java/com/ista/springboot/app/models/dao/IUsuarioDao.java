@@ -13,4 +13,12 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	//tener cuidado findBy-UsuarioNombre
 	//siempre tiene que ir el findBy y el nombre los atributos tal y como esta en la clase usuario el AND sirve para separar los atributos que se van a usar para buscar
 	Usuario findByUsuNombreUsuarioAndUsuContraUsuario(@Param("usuario") String UsuNombreUsuario, @Param("contrasena") String UsuContraUsuario);
+	
+	
+	//Ver si ya existe un usuario
+	@Query("SELECT COUNT(u)>0  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario  ")
+	boolean existByUsuNombreUsuario(@Param("usuario")String UsuNombreUsuario);
+	
+	
+	
 }
