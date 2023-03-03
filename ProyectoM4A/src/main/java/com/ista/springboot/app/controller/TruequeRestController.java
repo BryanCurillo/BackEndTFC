@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Trueque;
-import com.ista.springboot.app.models.services.ITruequeService;
+import com.ista.springboot.app.models.services.I.ITruequeService;
 
+@RestController
+@RequestMapping("/api")
 public class TruequeRestController {
 
 	@Autowired

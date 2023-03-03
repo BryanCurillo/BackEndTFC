@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IDetalleFacturaDao;
 import com.ista.springboot.app.models.entity.DetalleFactura;
+import com.ista.springboot.app.models.services.I.IDetalleFacturaService;
 
 @Service
 public class DetalleFacturaServiceImpl implements IDetalleFacturaService{

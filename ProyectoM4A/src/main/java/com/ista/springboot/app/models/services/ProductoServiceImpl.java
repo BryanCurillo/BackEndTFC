@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IProductoDao;
 import com.ista.springboot.app.models.entity.Producto;
+import com.ista.springboot.app.models.services.I.IProductoService;
 
 @Service
 public class ProductoServiceImpl implements IProductoService{

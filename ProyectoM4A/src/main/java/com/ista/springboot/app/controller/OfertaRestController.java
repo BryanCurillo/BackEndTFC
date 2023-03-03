@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Oferta;
-import com.ista.springboot.app.models.services.IOfertaService;
+import com.ista.springboot.app.models.services.I.IOfertaService;
 
+@RestController
+@RequestMapping("/api")
 public class OfertaRestController {
 	@Autowired
 	public IOfertaService ofertaService;

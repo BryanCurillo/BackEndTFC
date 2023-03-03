@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IPublicacionDao;
 import com.ista.springboot.app.models.entity.Publicacion;
+import com.ista.springboot.app.models.services.I.IPublicacionService;
 
 @Service
 public class PublicacionServiceImpl implements IPublicacionService {

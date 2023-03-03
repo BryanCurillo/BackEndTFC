@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Categoria;
-import com.ista.springboot.app.models.services.ICategoriaService;
+import com.ista.springboot.app.models.services.I.ICategoriaService;
 
 //HOLA KEVIN
 @RestController

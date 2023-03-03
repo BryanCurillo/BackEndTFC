@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.DetalleFactura;
-import com.ista.springboot.app.models.services.IDetalleFacturaService;
+import com.ista.springboot.app.models.services.I.IDetalleFacturaService;
 
 @RestController
 @RequestMapping("/api")

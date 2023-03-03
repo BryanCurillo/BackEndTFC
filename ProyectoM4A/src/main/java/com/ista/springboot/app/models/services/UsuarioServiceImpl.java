@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IUsuarioDao;
 import com.ista.springboot.app.models.entity.Usuario;
+import com.ista.springboot.app.models.services.I.IUsuarioService;
 
 @Service
 public class UsuarioServiceImpl implements IUsuarioService{

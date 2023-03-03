@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.ITruequeDao;
 import com.ista.springboot.app.models.entity.Trueque;
+import com.ista.springboot.app.models.services.I.ITruequeService;
 
 @Service
 public class TruequeServiceImpl implements ITruequeService{

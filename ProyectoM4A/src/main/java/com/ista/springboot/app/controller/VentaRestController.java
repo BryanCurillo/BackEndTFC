@@ -10,11 +10,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Venta;
-import com.ista.springboot.app.models.services.IVentaService;
+import com.ista.springboot.app.models.services.I.IVentaService;
 
+@RestController
+@RequestMapping("/api")
 public class VentaRestController {
 
 	@Autowired

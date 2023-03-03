@@ -7,6 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IEncabezadoFacturaDao;
 import com.ista.springboot.app.models.entity.EncabezadoFactura;
+import com.ista.springboot.app.models.services.I.IEncabezadoService;
 
 public class EncabezadoFacturaServiceImpl implements IEncabezadoService{
 

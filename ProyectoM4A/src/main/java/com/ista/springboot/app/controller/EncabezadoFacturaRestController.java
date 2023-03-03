@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.ista.springboot.app.models.entity.EncabezadoFactura;
-import com.ista.springboot.app.models.services.IEncabezadoService;
+import com.ista.springboot.app.models.services.I.IEncabezadoService;
 
 public class EncabezadoFacturaRestController {
 	@Autowired

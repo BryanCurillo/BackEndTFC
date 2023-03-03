@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IOfertaDao;
 import com.ista.springboot.app.models.entity.Oferta;
+import com.ista.springboot.app.models.services.I.IOfertaService;
 
 @Service
 public class OfertaServiceImpl implements IOfertaService{

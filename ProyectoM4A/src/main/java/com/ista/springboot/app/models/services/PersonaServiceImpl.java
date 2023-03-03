@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IPersonaDao;
 import com.ista.springboot.app.models.entity.Persona;
+import com.ista.springboot.app.models.services.I.IPersonaService;
 
 @Service
 public class PersonaServiceImpl implements IPersonaService {

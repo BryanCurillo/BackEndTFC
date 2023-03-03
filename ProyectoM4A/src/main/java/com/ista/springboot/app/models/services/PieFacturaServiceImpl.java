@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IPieFacturaDao;
 import com.ista.springboot.app.models.entity.PieFactura;
+import com.ista.springboot.app.models.services.I.IPieFacturaService;
 
 @Service
 public class PieFacturaServiceImpl implements IPieFacturaService {

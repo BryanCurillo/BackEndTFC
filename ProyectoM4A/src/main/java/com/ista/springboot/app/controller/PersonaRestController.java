@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.ista.springboot.app.models.entity.Persona;
-import com.ista.springboot.app.models.services.IPersonaService;
+import com.ista.springboot.app.models.services.I.IPersonaService;
 
 @CrossOrigin(origins="http://localhost:4200")
 @RestController

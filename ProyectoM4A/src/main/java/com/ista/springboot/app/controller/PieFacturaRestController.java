@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.ista.springboot.app.models.entity.PieFactura;
-import com.ista.springboot.app.models.services.IPieFacturaService;
+import com.ista.springboot.app.models.services.I.IPieFacturaService;
 
 public class PieFacturaRestController {
 	@Autowired

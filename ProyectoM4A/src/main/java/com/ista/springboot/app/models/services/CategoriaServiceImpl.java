@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.ICategoriaDao;
 import com.ista.springboot.app.models.entity.Categoria;
+import com.ista.springboot.app.models.services.I.ICategoriaService;
 
 @Service
 public class CategoriaServiceImpl implements ICategoriaService{

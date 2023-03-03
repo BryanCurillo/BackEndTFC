@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.ista.springboot.app.models.dao.IRolDao;
 import com.ista.springboot.app.models.entity.Rol;
+import com.ista.springboot.app.models.services.I.IRolService;
 
 @Service
 public class RolServiceImpl implements IRolService{
