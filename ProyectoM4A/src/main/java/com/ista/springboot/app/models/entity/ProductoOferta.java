@@ -34,7 +34,7 @@ public class ProductoOferta implements Serializable{
 	 */
 	private String PoNombre;
 	private Double PoPrecio;
-	private Byte PoFoto;
+	private String PoFoto;
 	private String PoDescripcion;
 	/**
 	 * 
@@ -63,10 +63,10 @@ public class ProductoOferta implements Serializable{
 	public void setPoPrecio(Double poPrecio) {
 		PoPrecio = poPrecio;
 	}
-	public Byte getPoFoto() {
+	public String getPoFoto() {
 		return PoFoto;
 	}
-	public void setPoFoto(Byte poFoto) {
+	public void setPoFoto(String poFoto) {
 		PoFoto = poFoto;
 	}
 	public String getPoDescripcion() {
@@ -75,5 +75,5 @@ public class ProductoOferta implements Serializable{
 	public void setPoDescripcion(String poDescripcion) {
 		PoDescripcion = poDescripcion;
 	}
-	
+
 }
