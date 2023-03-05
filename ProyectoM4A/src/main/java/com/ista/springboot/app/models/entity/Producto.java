@@ -33,7 +33,7 @@ public class Producto implements Serializable{
 	private String ProdNombre;
 	private Double ProdPrecio;
 	private String ProdDescripcion;
-	private Byte ProdFoto;
+	private String ProdFoto;
 	
 	@OneToOne(mappedBy = "VenIdProducto")
 	private Venta VenIdProducto;
@@ -79,11 +79,35 @@ public class Producto implements Serializable{
 	public void setProdDescripcion(String prodDescripcion) {
 		ProdDescripcion = prodDescripcion;
 	}
-	public Byte getProdFoto() {
+	public String getProdFoto() {
 		return ProdFoto;
 	}
-	public void setProdFoto(Byte prodFoto) {
+	public void setProdFoto(String prodFoto) {
 		ProdFoto = prodFoto;
+	}
+	public Venta getVenIdProducto() {
+		return VenIdProducto;
+	}
+	public void setVenIdProducto(Venta venIdProducto) {
+		VenIdProducto = venIdProducto;
+	}
+	public DetalleFactura getDetIdProducto() {
+		return DetIdProducto;
+	}
+	public void setDetIdProducto(DetalleFactura detIdProducto) {
+		DetIdProducto = detIdProducto;
+	}
+	public Trueque getTrueque() {
+		return trueque;
+	}
+	public void setTrueque(Trueque trueque) {
+		this.trueque = trueque;
+	}
+	public Publicacion getPubIdPublicacion() {
+		return PubIdPublicacion;
+	}
+	public void setPubIdPublicacion(Publicacion pubIdPublicacion) {
+		PubIdPublicacion = pubIdPublicacion;
 	}
 	public List<Categoria> getProdIdCategoria() {
 		return ProdIdCategoria;
@@ -91,5 +115,6 @@ public class Producto implements Serializable{
 	public void setProdIdCategoria(List<Categoria> prodIdCategoria) {
 		ProdIdCategoria = prodIdCategoria;
 	}
+
 	
 }

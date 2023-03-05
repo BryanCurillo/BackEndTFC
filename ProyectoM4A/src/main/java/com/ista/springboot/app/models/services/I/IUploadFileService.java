@@ -3,8 +3,7 @@ package com.ista.springboot.app.models.services.I;
 import java.io.IOException;
 import java.net.MalformedURLException;
 
-import javax.annotation.Resource;
-
+import org.springframework.core.io.Resource;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface IUploadFileService {
