@@ -26,7 +26,6 @@ public class ImageModel {
 
 	public ImageModel(String name, String type, byte[] picByte) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.type = type;
 		this.picByte = picByte;
