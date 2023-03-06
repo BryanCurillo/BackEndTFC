@@ -2,6 +2,7 @@ package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -24,6 +25,7 @@ public class Persona implements Serializable {
 	/**
 	 * 
 	 */
+	@Column(unique = true, name = "PerCedula")
 	private String PerCedula;
 	/**
 	 * 
@@ -37,8 +39,8 @@ public class Persona implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "UsuPerCedula")
-	private Usuario UsuPerCedula;
+	@OneToOne(mappedBy = "UsuPerId")
+	private Usuario usuario;
 	/**
 	 * 
 	 */
@@ -90,5 +92,4 @@ public class Persona implements Serializable {
 	public void setPerSexo(String perSexo) {
 		PerSexo = perSexo;
 	}
-	
 }

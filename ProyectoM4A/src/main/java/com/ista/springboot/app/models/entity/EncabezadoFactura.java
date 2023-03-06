@@ -57,16 +57,7 @@ public class EncabezadoFactura implements Serializable{
      */
 	@PrePersist
 	public void prePersist(){
-		EncaFecha = new Date();
-	}
-    /**
-     * 
-     */
-	public Long getEncaId() {
-		return EncaId;
-	}
-	public void setEncaId(Long encaId) {
-		EncaId = encaId;
+		EncaFecha= new Date();
 	}
 	public Trueque getEncaIdTrueque() {
 		return EncaIdTrueque;
@@ -80,16 +71,17 @@ public class EncabezadoFactura implements Serializable{
 	public void setEncaIdVenta(Venta encaIdVenta) {
 		EncaIdVenta = encaIdVenta;
 	}
-	public PieFactura getPieFactura() {
-		return PieFactura;
-	}
-	public void setPieFactura(PieFactura pieFactura) {
-		PieFactura = pieFactura;
-	}
 	public Date getEncaFecha() {
 		return EncaFecha;
 	}
 	public void setEncaFecha(Date encaFecha) {
 		EncaFecha = encaFecha;
 	}
+	public Long getEncaId() {
+		return EncaId;
+	}
+	public void setEncaId(Long encaId) {
+		EncaId = encaId;
+	}
+
 }

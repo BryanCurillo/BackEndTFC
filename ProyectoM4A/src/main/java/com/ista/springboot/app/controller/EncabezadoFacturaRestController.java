@@ -49,7 +49,6 @@ public class EncabezadoFacturaRestController {
 		encabezadoFacturaACTUAL.setEncaId(encabezadoFactura.getEncaId());
 		encabezadoFacturaACTUAL.setEncaIdTrueque(encabezadoFactura.getEncaIdTrueque());
 		encabezadoFacturaACTUAL.setEncaIdVenta(encabezadoFactura.getEncaIdVenta());
-		encabezadoFacturaACTUAL.setPieFactura(encabezadoFactura.getPieFactura());
 		
 		return encabezadoService.save(encabezadoFacturaACTUAL);
 	}

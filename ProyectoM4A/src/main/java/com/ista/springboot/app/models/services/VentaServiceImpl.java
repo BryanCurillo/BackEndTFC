@@ -6,7 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ista.springboot.app.models.dao.IUsuarioDao;
 import com.ista.springboot.app.models.dao.IVentaDao;
+import com.ista.springboot.app.models.entity.Usuario;
 import com.ista.springboot.app.models.entity.Venta;
 import com.ista.springboot.app.models.services.I.IVentaService;
 
@@ -17,10 +19,9 @@ public class VentaServiceImpl implements IVentaService{
 	private IVentaDao dao;
 
 	@Override
-	@Transactional(readOnly = true)
 	public List<Venta> findAll() {
 		// TODO Auto-generated method stub
-		return (List<Venta>)dao.findAll();
+		return (List<Venta>) dao.findAll();
 	}
 
 	@Override
@@ -30,17 +31,17 @@ public class VentaServiceImpl implements IVentaService{
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Venta findById(Long Id) {
-
+		// TODO Auto-generated method stub
 		return dao.findById(Id).orElse(null);
 	}
 
 	@Override
 	public void delete(Long Id) {
-	
+		// TODO Auto-generated method stub
 		dao.deleteById(Id);
 	}
 	
+
 
 }

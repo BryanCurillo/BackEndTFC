@@ -27,7 +27,7 @@ public class Trueque implements Serializable {
 	 * 
 	 */
 	@OneToOne(mappedBy = "EncaIdTrueque")
-	private EncabezadoFactura EncaIdTrueque;
+	private EncabezadoFactura encabezadoFactura;
 	
 	@OneToOne
 	@JoinColumn(name = "TruIdVendedor")
@@ -53,12 +53,6 @@ public class Trueque implements Serializable {
 	public void setTruNumero(Long truNumero) {
 		TruNumero = truNumero;
 	}
-	public EncabezadoFactura getEncaIdTrueque() {
-		return EncaIdTrueque;
-	}
-	public void setEncaIdTrueque(EncabezadoFactura encaIdTrueque) {
-		EncaIdTrueque = encaIdTrueque;
-	}
 	public Usuario getTruIdVendedor() {
 		return TruIdVendedor;
 	}
@@ -83,4 +77,5 @@ public class Trueque implements Serializable {
 	public void setTruEstado(Boolean truEstado) {
 		TruEstado = truEstado;
 	}
+
 }

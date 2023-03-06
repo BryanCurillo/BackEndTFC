@@ -2,7 +2,6 @@ package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
 import java.util.List;
-import java.util.Set;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,15 +10,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "Producto")
-public class Producto implements Serializable {
+@Table (name="Producto")
+public class Producto implements Serializable{
 	/**
 	 * 
 	 */
@@ -36,123 +33,62 @@ public class Producto implements Serializable {
 	private String ProdNombre;
 	private Double ProdPrecio;
 	private String ProdDescripcion;
-	private String ProdFoto;
-
+	private Byte ProdFoto;
+	
 	@OneToOne(mappedBy = "VenIdProducto")
 	private Venta VenIdProducto;
-
+	
 	@OneToOne(mappedBy = "DetIdProducto")
 	private DetalleFactura DetIdProducto;
-
+	
 	@OneToOne(mappedBy = "TruIdProducto")
-	private Trueque trueque;
-
+	private Trueque TruIdProducto;
+	
 	@OneToOne(mappedBy = "PubIdProducto")
-	private Publicacion PubIdPublicacion;
-
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "productImages", joinColumns = { @JoinColumn(name = "ProdId") }, inverseJoinColumns = {
-			@JoinColumn(name = "imageId") })
-	private Set<ImageModel> productImages;
-
-	
-	
-	public Set<ImageModel> getProductImages() {
-		return productImages;
-	}
-
-	public void setProductImages(Set<ImageModel> productImages) {
-		this.productImages = productImages;
-	}
-
+	private Publicacion PubIdProducto;
 	/**
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "CatId")
 	private List<Categoria> ProdIdCategoria;
-
 	/**
 	 * 
 	 */
 	public Long getProdId() {
 		return ProdId;
 	}
-
 	public void setProdId(Long prodId) {
 		ProdId = prodId;
 	}
-
 	public String getProdNombre() {
 		return ProdNombre;
 	}
-
 	public void setProdNombre(String prodNombre) {
 		ProdNombre = prodNombre;
 	}
-
 	public Double getProdPrecio() {
 		return ProdPrecio;
 	}
-
 	public void setProdPrecio(Double prodPrecio) {
 		ProdPrecio = prodPrecio;
 	}
-
 	public String getProdDescripcion() {
 		return ProdDescripcion;
 	}
-
 	public void setProdDescripcion(String prodDescripcion) {
 		ProdDescripcion = prodDescripcion;
 	}
-
-	public String getProdFoto() {
+	public Byte getProdFoto() {
 		return ProdFoto;
 	}
-
-	public void setProdFoto(String prodFoto) {
+	public void setProdFoto(Byte prodFoto) {
 		ProdFoto = prodFoto;
 	}
-
-	public Venta getVenIdProducto() {
-		return VenIdProducto;
-	}
-
-	public void setVenIdProducto(Venta venIdProducto) {
-		VenIdProducto = venIdProducto;
-	}
-
-	public DetalleFactura getDetIdProducto() {
-		return DetIdProducto;
-	}
-
-	public void setDetIdProducto(DetalleFactura detIdProducto) {
-		DetIdProducto = detIdProducto;
-	}
-
-	public Trueque getTrueque() {
-		return trueque;
-	}
-
-	public void setTrueque(Trueque trueque) {
-		this.trueque = trueque;
-	}
-
-	public Publicacion getPubIdPublicacion() {
-		return PubIdPublicacion;
-	}
-
-	public void setPubIdPublicacion(Publicacion pubIdPublicacion) {
-		PubIdPublicacion = pubIdPublicacion;
-	}
-
 	public List<Categoria> getProdIdCategoria() {
 		return ProdIdCategoria;
 	}
-
 	public void setProdIdCategoria(List<Categoria> prodIdCategoria) {
 		ProdIdCategoria = prodIdCategoria;
 	}
-
 }

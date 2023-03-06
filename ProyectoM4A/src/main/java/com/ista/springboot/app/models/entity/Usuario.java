@@ -47,19 +47,17 @@ public class Usuario implements Serializable{
 	
 	
     @OneToOne
-    @JoinColumn(name = "UsuPerCedula")
-	private Persona UsuPerCedula;
-    
-    
-    @OneToOne
-    @JoinColumn(name = "UsuIdRol")
-	private Rol UsuIdRol;
+    @JoinColumn(name = "UsuPerId")
+	private Persona UsuPerId;
 	/**
 	 * 
 	 */
 	@Column(unique = true)
 	private String UsuNombreUsuario;
-	private String UsuContraUsuario;
+	/**
+	 * 
+	 */
+	private String UsuContrasena;
 	private double UsuCalificacion;
 	/**
 	 * 
@@ -70,53 +68,11 @@ public class Usuario implements Serializable{
 	public void setUsuId(Long usuId) {
 		UsuId = usuId;
 	}
-	public Trueque getTruIdVendedor() {
-		return TruIdVendedor;
+	public Persona getUsuPerId() {
+		return UsuPerId;
 	}
-	public void setTruIdVendedor(Trueque truIdVendedor) {
-		TruIdVendedor = truIdVendedor;
-	}
-	public Trueque getTruIdComprador() {
-		return TruIdComprador;
-	}
-	public void setTruIdComprador(Trueque truIdComprador) {
-		TruIdComprador = truIdComprador;
-	}
-	public Venta getVenIdComprador() {
-		return VenIdComprador;
-	}
-	public void setVenIdComprador(Venta venIdComprador) {
-		VenIdComprador = venIdComprador;
-	}
-	public Venta getVenIdVendedor() {
-		return VenIdVendedor;
-	}
-	public void setVenIdVendedor(Venta venIdVendedor) {
-		VenIdVendedor = venIdVendedor;
-	}
-	public Oferta getOfeIdOfertante() {
-		return OfeIdOfertante;
-	}
-	public void setOfeIdOfertante(Oferta ofeIdOfertante) {
-		OfeIdOfertante = ofeIdOfertante;
-	}
-	public Publicacion getPubIdVendedor() {
-		return PubIdVendedor;
-	}
-	public void setPubIdVendedor(Publicacion pubIdVendedor) {
-		PubIdVendedor = pubIdVendedor;
-	}
-	public Persona getUsuPerCedula() {
-		return UsuPerCedula;
-	}
-	public void setUsuPerCedula(Persona usuPerCedula) {
-		UsuPerCedula = usuPerCedula;
-	}
-	public Rol getUsuIdRol() {
-		return UsuIdRol;
-	}
-	public void setUsuIdRol(Rol usuIdRol) {
-		UsuIdRol = usuIdRol;
+	public void setUsuPerId(Persona usuPerId) {
+		UsuPerId = usuPerId;
 	}
 	public String getUsuNombreUsuario() {
 		return UsuNombreUsuario;
@@ -124,11 +80,11 @@ public class Usuario implements Serializable{
 	public void setUsuNombreUsuario(String usuNombreUsuario) {
 		UsuNombreUsuario = usuNombreUsuario;
 	}
-	public String getUsuContraUsuario() {
-		return UsuContraUsuario;
+	public String getUsuContrasena() {
+		return UsuContrasena;
 	}
-	public void setUsuContraUsuario(String usuContraUsuario) {
-		UsuContraUsuario = usuContraUsuario;
+	public void setUsuContrasena(String usuContrasena) {
+		UsuContrasena = usuContrasena;
 	}
 	public double getUsuCalificacion() {
 		return UsuCalificacion;
@@ -136,25 +92,5 @@ public class Usuario implements Serializable{
 	public void setUsuCalificacion(double usuCalificacion) {
 		UsuCalificacion = usuCalificacion;
 	}
-	
-	//contructores para enviar usuario personalizados
-	public Usuario() {
-		super();
-	}
-	
-	public Usuario(String usuNombreUsuario, String usuContraUsuario) {
-		super();
-		UsuNombreUsuario = usuNombreUsuario;
-		UsuContraUsuario = usuContraUsuario;
-	}
-	
-	public Usuario(String usuNombreUsuario) {
-		super();
-		UsuNombreUsuario = usuNombreUsuario;
-	}
-	
-	
 
-	
-	
 }

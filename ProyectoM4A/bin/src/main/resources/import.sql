@@ -1,1 +1,3 @@
-INSERT INTO public.persona(per_id, per_apellido, per_cedula, per_correo, per_direccion, per_nombre, per_sexo, per_telefono)VALUES (1, 'cora', '015213131', 'cora@gmail.com', 'asdasd', 'ale', 'fem', '4644564465');
+INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (1,'pepe','0107560419','gato100tifico@gmail.com','los tanques ','marcho','macho','2222222223');
+INSERT INTO `rol`(`rol_id`, `rol_nombre`) VALUES (1,'vendedor');
+INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_nombre_usuario`, `usu_id_rol`, `usu_per_cedula`) VALUES (1,0,'1234','admin',1,1);

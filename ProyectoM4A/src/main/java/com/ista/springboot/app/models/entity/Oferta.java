@@ -38,12 +38,12 @@ public class Oferta implements Serializable{
 	 * 
 	 */
 	
-	@OneToOne(mappedBy = "PodIdOferta")
-	private ProductoOferta PodIdOferta;
-	
 	@OneToOne
 	@JoinColumn(name = "OfeIdOfertante")
 	private Usuario OfeIdOfertante;
+	
+	@OneToOne(mappedBy = "PoIdOferta")
+	private ProductoOferta PoIdOferta;
 	
 	private Boolean OfeEstado;
 	/**
@@ -54,24 +54,8 @@ public class Oferta implements Serializable{
 		return OfeId;
 	}
 
-	public void setOfeId(Long ofeId) {
-		OfeId = ofeId;
-	}
-
-	public List<Trueque> getOfeIdTrueque() {
-		return OfeIdTrueque;
-	}
-
-	public void setOfeIdTrueque(List<Trueque> ofeIdTrueque) {
-		OfeIdTrueque = ofeIdTrueque;
-	}
-
-	public ProductoOferta getPodIdOferta() {
-		return PodIdOferta;
-	}
-
-	public void setPodIdOferta(ProductoOferta podIdOferta) {
-		PodIdOferta = podIdOferta;
+	public void setOfeId(Long oferId) {
+		OfeId = oferId;
 	}
 
 	public Usuario getOfeIdOfertante() {

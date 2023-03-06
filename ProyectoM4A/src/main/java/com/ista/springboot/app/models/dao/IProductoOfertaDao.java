@@ -1,9 +1,9 @@
 package com.ista.springboot.app.models.dao;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
 import com.ista.springboot.app.models.entity.ProductoOferta;
 
-public interface IProductoOfertaDao extends JpaRepository<ProductoOferta, Long> {
+public interface IProductoOfertaDao extends CrudRepository<ProductoOferta, Long> {
 
 }

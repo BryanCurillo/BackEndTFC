@@ -35,7 +35,7 @@ public class DetalleFactura implements Serializable{
 	 * 
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "EncaId")
+	@JoinColumn(name = "EncaNumero")
 	private List<EncabezadoFactura> DetNumEncabezado;
 	/**
 	 * 
@@ -43,9 +43,7 @@ public class DetalleFactura implements Serializable{
 	private Double DetPrecioUnitario;
 	private Long DetCantidad;
 	private Double DetPrecioTotal;
-	/**
-	 * 
-	 */
+	
 	public Long getDetId() {
 		return DetId;
 	}
@@ -82,6 +80,5 @@ public class DetalleFactura implements Serializable{
 	public void setDetPrecioTotal(Double detPrecioTotal) {
 		DetPrecioTotal = detPrecioTotal;
 	}
-	
 }
 

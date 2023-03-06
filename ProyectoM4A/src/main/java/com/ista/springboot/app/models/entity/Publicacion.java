@@ -64,5 +64,5 @@ public class Publicacion implements Serializable{
 	public void setPubDescripcion(String pubDescripcion) {
 		PubDescripcion = pubDescripcion;
 	}
-	
+
 }

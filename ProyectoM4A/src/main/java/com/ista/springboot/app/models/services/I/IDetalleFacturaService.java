@@ -14,4 +14,5 @@ public interface IDetalleFacturaService {
 	
 	public void delete(Long Id);
 	
+	
 }

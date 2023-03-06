@@ -31,7 +31,7 @@ public class PieFactura implements Serializable{
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "PieIdEncabezado")
+	@JoinColumn(name = "EncabezadoFactura")
 	private EncabezadoFactura EncabezadoFactura;
 	/**
 	 * 
@@ -66,4 +66,5 @@ public class PieFactura implements Serializable{
 	public void setEncabezadoFactura(EncabezadoFactura encabezadoFactura) {
 		EncabezadoFactura = encabezadoFactura;
 	}
+
 }

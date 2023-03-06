@@ -37,4 +37,7 @@ public class Categoria implements Serializable{
 	public void setCatNombre(String catNombre) {
 		CatNombre = catNombre;
 	}
+
+
+
 }

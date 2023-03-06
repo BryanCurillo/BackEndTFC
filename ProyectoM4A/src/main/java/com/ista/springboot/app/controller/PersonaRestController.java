@@ -84,8 +84,6 @@ public class PersonaRestController {
 	@GetMapping("/persona/existG/{gmail}")
 	public Boolean showU(@PathVariable String gmail) {
 		return iPersonaService.existByGmail(gmail);
-		
-
 	}
 	
 	@GetMapping("/persona/existD/{dni}")

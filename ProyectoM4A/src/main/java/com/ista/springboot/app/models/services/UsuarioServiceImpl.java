@@ -6,15 +6,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.ista.springboot.app.models.dao.IUsuarioConPerDao;
 import com.ista.springboot.app.models.dao.IUsuarioDao;
 import com.ista.springboot.app.models.entity.Usuario;
 import com.ista.springboot.app.models.services.I.IUsuarioService;
 
 @Service
+
 public class UsuarioServiceImpl implements IUsuarioService{
 
 	@Autowired
 	private IUsuarioDao dao;
+	@Autowired
+	private IUsuarioConPerDao daoPer;
 	
 	@Override
 	@Transactional(readOnly = true)
@@ -38,23 +42,13 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		dao.deleteById(Id);
 	}
 	
-	
-
 	//metodos personalizados
 	@Override
 	@Transactional(readOnly = true)
 	public Usuario findByUserPass(String usu_nombreUsuario, String contrasena) {
 		// TODO Auto-generated method stub
-		return dao.findByUsuNombreUsuarioAndUsuContraUsuario(usu_nombreUsuario, contrasena);
+		return daoPer.findByusuNombreUsuarioAndcontrasena(usu_nombreUsuario, contrasena);
 	}
 
-	@Override
-	@Transactional(readOnly = true)
-	public Boolean existByUser(String usu_nombreUsuario) {
-		// TODO Auto-generated method stub
-		return dao.existByUsuNombreUsuario(usu_nombreUsuario);
-	}
-	
-	
 
 }

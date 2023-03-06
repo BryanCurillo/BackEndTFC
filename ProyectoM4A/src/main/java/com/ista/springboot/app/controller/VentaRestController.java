@@ -50,12 +50,12 @@ public class VentaRestController {
 	public Venta update(@RequestBody Venta venta, @PathVariable Long id) {
 		
 		Venta ventaACTUAL = ventaService.findById(id);
-		ventaACTUAL.setEncaIdVenta(venta.getEncaIdVenta());
-		ventaACTUAL.setVenID(venta.getVenID());
 		ventaACTUAL.setVenIdComprador(venta.getVenIdComprador());
 		ventaACTUAL.setVenIdProducto(venta.getVenIdProducto());
 		ventaACTUAL.setVenIdVendedor(venta.getVenIdVendedor());
 		ventaACTUAL.setVenMetodoPago(venta.getVenMetodoPago());
+		ventaACTUAL.setVenId(venta.getVenId());
+		
 
 		return ventaService.save(ventaACTUAL);
 	}

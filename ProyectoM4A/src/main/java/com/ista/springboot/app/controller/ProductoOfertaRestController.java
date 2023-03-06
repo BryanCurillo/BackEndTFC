@@ -50,12 +50,11 @@ public class ProductoOfertaRestController {
 
 		ProductoOferta productoOfertaACTUAL = ofertaService.findById(id);
 		productoOfertaACTUAL.setPoDescripcion(productoOferta.getPoDescripcion());
-		productoOfertaACTUAL.setPodIdOferta(productoOferta.getPodIdOferta());
 		productoOfertaACTUAL.setPoFoto(productoOferta.getPoFoto());
 		productoOfertaACTUAL.setPoId(productoOferta.getPoId());
 		productoOfertaACTUAL.setPoNombre(productoOferta.getPoNombre());
 		productoOfertaACTUAL.setPoPrecio(productoOferta.getPoPrecio());
-		
+		productoOfertaACTUAL.setPoIdOferta(productoOferta.getPoIdOferta());
 		
 		return ofertaService.save(productoOfertaACTUAL);
 	}

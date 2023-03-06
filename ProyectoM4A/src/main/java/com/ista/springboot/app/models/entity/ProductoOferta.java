@@ -27,8 +27,8 @@ public class ProductoOferta implements Serializable{
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "PodIdOferta")
-	private Oferta PodIdOferta;
+	@JoinColumn(name = "PoIdOferta")
+	private Oferta PoIdOferta;
 	/**
 	 * 
 	 */
@@ -45,11 +45,11 @@ public class ProductoOferta implements Serializable{
 	public void setPoId(Long poId) {
 		PoId = poId;
 	}
-	public Oferta getPodIdOferta() {
-		return PodIdOferta;
+	public Oferta getPoIdOferta() {
+		return PoIdOferta;
 	}
-	public void setPodIdOferta(Oferta podIdOferta) {
-		PodIdOferta = podIdOferta;
+	public void setPoIdOferta(Oferta poIdOferta) {
+		PoIdOferta = poIdOferta;
 	}
 	public String getPoNombre() {
 		return PoNombre;

@@ -17,8 +17,4 @@ public interface IPersonaService {
 
 	public void delete(Long id);
 
-	//metodos personalizados
-	public  Boolean existByDni(String dni);
-	
-	public  Boolean existByGmail(String gmail);
 }
