@@ -152,6 +152,8 @@ public class Usuario implements Serializable{
 		super();
 		UsuNombreUsuario = usuNombreUsuario;
 	}
+	
+	
 
 	
 	

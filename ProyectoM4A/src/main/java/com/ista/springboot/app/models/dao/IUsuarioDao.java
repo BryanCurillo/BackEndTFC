@@ -7,6 +7,18 @@ import org.springframework.data.repository.query.Param;
 import com.ista.springboot.app.models.entity.Usuario;
 
 public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
+	
+	//modifico en metodo save para que solo me retone en usuario nada mas
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//¡¡¡¡¡¡¡¡¡¡AGREGAR EL NEW ( constructor ) este debe estar definido para 
 	//crear el objeto usuario solo con los atributos que necesito
 	@Query("SELECT new Usuario(u.UsuNombreUsuario , u.UsuContraUsuario)  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena")

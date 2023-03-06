@@ -35,10 +35,20 @@ public class PersonaRestController {
 	public Persona show(@PathVariable Long id) {
 		return iPersonaService.findById(id);
 	}
+	
+	
+	/**
+	 * TENER CUIDADO A LA HORA DE CREAR EL MODELO PERSONA Y EL RESTO PORQUE AQUI EL ATRIBUTO PerNombre TIENE 2 MAYUSCULAS
+	 * PERO DESDE ANGULAR SE TIENE QUE MANDAR perNombre CASO CONTRARIO NO RECONOCERA EL ATRIBUTO
+	 * 
+	 * PARA VER COMO SE TIENE QUE GUARDAR USAR INSOMIA Y LISTAR LOS ATRIBUTOS Y COPIAR LOS NOMBRES PATI ABEL 7U7
+	 * 
+	 * */
 
 	@PostMapping("/persona")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Persona create(@RequestBody Persona persona) {
+		System.out.println(persona.getPerApellido());
 		return iPersonaService.save(persona);
 	}
 
@@ -53,7 +63,7 @@ public class PersonaRestController {
 	public Persona update(@RequestBody Persona persona, @PathVariable Long id) {
 
 		Persona personaactual = iPersonaService.findById(id);
-
+		
 		personaactual.setPerApellido(persona.getPerApellido());
 		personaactual.setPerCedula(persona.getPerCedula());
 		personaactual.setPerCorreo(persona.getPerCorreo());
