@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.ista.springboot.app.models.entity.Producto;
 import com.ista.springboot.app.models.services.I.IProductoService;
 import com.ista.springboot.app.models.services.I.IUploadFileService;
@@ -32,19 +31,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-
 @RestController
 @RequestMapping("/api")
 public class ProductoRestController {
 	@Autowired
-	public IProductoService productoService ;
-	
-//	@Autowired 
-//	public IUploadFileService uploadFileService;
-	
-	//LISTAR
+	public IProductoService productoService;
+
+
+	// LISTAR
 	@GetMapping("/Producto")
-	public List<Producto> index(){
+	public List<Producto> index() {
 		return productoService.findAll();
 	}
 
@@ -57,8 +53,8 @@ public class ProductoRestController {
 	// GUARDAR
 	@PostMapping("/Producto")
 	@ResponseStatus(HttpStatus.CREATED)
-	public Producto create(@RequestBody Producto producto ) {
-		
+	public Producto create(@RequestBody Producto producto) {
+
 		return productoService.save(producto);
 	}
 
@@ -66,7 +62,7 @@ public class ProductoRestController {
 	@PutMapping("/Producto/{id}")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Producto update(@RequestBody Producto producto, @PathVariable Long id) {
-		
+
 		Producto productoACTUAL = productoService.findById(id);
 		productoACTUAL.setProdDescripcion(productoACTUAL.getProdDescripcion());
 		productoACTUAL.setProdFoto(productoACTUAL.getProdFoto());
@@ -74,7 +70,7 @@ public class ProductoRestController {
 		productoACTUAL.setProdIdCategoria(productoACTUAL.getProdIdCategoria());
 		productoACTUAL.setProdNombre(productoACTUAL.getProdNombre());
 		productoACTUAL.setProdPrecio(productoACTUAL.getProdPrecio());
-		
+
 		return productoService.save(productoACTUAL);
 	}
 
@@ -84,62 +80,5 @@ public class ProductoRestController {
 	public void delete(@PathVariable Long id) {
 		productoService.delete(id);
 	}
-	
-	
-	
-	///////////////////////////////
-//	@GetMapping
-//	public String listMemes(Model model) {
-//		try {
-//			model.addAttribute("listMemes", productoService.findAll());
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//		return "producto/listProductos";
-//	}
-//	
-//	
-//	@GetMapping(value = "/uploads/{filename}")
-//	public ResponseEntity<Resource> goImage(@PathVariable String filename) {
-//		Resource resource = null;
-//		try {
-//			resource = uploadFileService.load(filename);
-//		} catch (MalformedURLException e) {
-//			e.printStackTrace();
-//		}
-//		return ResponseEntity.ok()
-//				.header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.getFilename() + "\"")
-//				.body(resource);
-//	}
-//	
-//	
-//	
-//	@GetMapping("/new")
-//	public String newProducto(Model model) {
-//		model.addAttribute("producto", new Producto());
-//		model.addAttribute("listMemes", productoService.findAll());
-//		return "producto/producto";
-//	}
-//	
-//	
-//	@PostMapping("/save")
-//	public String saveMeme(@Validated @ModelAttribute("producto") Producto producto, BindingResult result, Model model,
-//			@RequestParam("file") MultipartFile image, RedirectAttributes flash, SessionStatus status)
-//			throws Exception {
-//		if (result.hasErrors()) {
-//			System.out.println(result.getFieldError());
-//			return "meme/meme";
-//		} else {
-//			if (!image.isEmpty()) {
-//				if (producto.getProdId() > 0 && producto.getProdFoto() != null && producto.getProdFoto().length() > 0) {
-//					uploadFileService.delete(producto.getProdFoto());
-//				}
-//				String uniqueFileName = uploadFileService.copy(image);
-//				meme.setImage(uniqueFileName);
-//			}
-//			memeService.save(meme);
-//			status.setComplete();
-//		}
-//		return "redirect:/memes";
-//	}
+
 }
