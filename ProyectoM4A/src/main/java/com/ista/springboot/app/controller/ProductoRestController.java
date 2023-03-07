@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.ista.springboot.app.models.entity.ImageModel;
 import com.ista.springboot.app.models.entity.Producto;
 import com.ista.springboot.app.models.services.I.IProductoService;
 

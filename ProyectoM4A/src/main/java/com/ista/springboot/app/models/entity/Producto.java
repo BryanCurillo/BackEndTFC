@@ -56,20 +56,6 @@ public class Producto implements Serializable {
 	private Categoria categoria;
 
 	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "productImages", joinColumns = { @JoinColumn(name = "ProdId") }, inverseJoinColumns = {
-			@JoinColumn(name = "imageId") })
-	private Set<ImageModel> productImages;
-
-	
-	
-	public Set<ImageModel> getProductImages() {
-		return productImages;
-	}
-
-	public void setProductImages(Set<ImageModel> productImages) {
-		this.productImages = productImages;
-	}
 	/**
 	 * 
 	 */
