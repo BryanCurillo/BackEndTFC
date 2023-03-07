@@ -49,9 +49,9 @@ public class Producto implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "CatId")
-	private List<Categoria> ProdIdCategoria;
+	@OneToOne
+	@JoinColumn(name = "ProdIdCategoria")
+	private Categoria ProdIdCategoria;
 	/**
 	 * 
 	 */
@@ -85,10 +85,11 @@ public class Producto implements Serializable{
 	public void setProdFoto(Byte prodFoto) {
 		ProdFoto = prodFoto;
 	}
-	public List<Categoria> getProdIdCategoria() {
+	public Categoria getProdIdCategoria() {
 		return ProdIdCategoria;
 	}
-	public void setProdIdCategoria(List<Categoria> prodIdCategoria) {
+	public void setProdIdCategoria(Categoria prodIdCategoria) {
 		ProdIdCategoria = prodIdCategoria;
 	}
+
 }
