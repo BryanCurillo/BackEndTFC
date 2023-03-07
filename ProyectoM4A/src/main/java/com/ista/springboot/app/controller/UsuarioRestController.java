@@ -64,7 +64,7 @@ public class UsuarioRestController {
 		usuarioACTUAL.setUsuId(usuario.getUsuId());
 		usuarioACTUAL.setUsuNombreUsuario(usuario.getUsuNombreUsuario());
 		usuarioACTUAL.setUsuPerId(usuario.getUsuPerId());
-		usuarioACTUAL.setUsuContrasena(usuario.getUsuContrasena());
+		usuarioACTUAL.setUsuContraUsuario(usuario.getUsuContraUsuario());
 		
 		
 		return usuarioService.save(usuarioACTUAL);

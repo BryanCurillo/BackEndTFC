@@ -43,5 +43,22 @@ public class PersonaServiceImpl implements IPersonaService {
 		// TODO Auto-generated method stub
 		dao.deleteById(id);
 	}
+	
+	//metodos personalizados
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Boolean existByDni(String dni) {
+		// TODO Auto-generated method stub
+		return dao.existByPerCedula(dni);
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public Boolean existByGmail(String gmail) {
+		// TODO Auto-generated method stub
+		return dao.existByPerCorreo(gmail);
+	}
+
 
 }

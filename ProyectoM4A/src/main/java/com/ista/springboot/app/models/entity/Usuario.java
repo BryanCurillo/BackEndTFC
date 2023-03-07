@@ -57,7 +57,7 @@ public class Usuario implements Serializable{
 	/**
 	 * 
 	 */
-	private String UsuContrasena;
+	private String UsuContraUsuario;
 	private double UsuCalificacion;
 	/**
 	 * 
@@ -80,11 +80,12 @@ public class Usuario implements Serializable{
 	public void setUsuNombreUsuario(String usuNombreUsuario) {
 		UsuNombreUsuario = usuNombreUsuario;
 	}
-	public String getUsuContrasena() {
-		return UsuContrasena;
+
+	public String getUsuContraUsuario() {
+		return UsuContraUsuario;
 	}
-	public void setUsuContrasena(String usuContrasena) {
-		UsuContrasena = usuContrasena;
+	public void setUsuContraUsuario(String usuContraUsuario) {
+		UsuContraUsuario = usuContraUsuario;
 	}
 	public double getUsuCalificacion() {
 		return UsuCalificacion;
@@ -92,5 +93,12 @@ public class Usuario implements Serializable{
 	public void setUsuCalificacion(double usuCalificacion) {
 		UsuCalificacion = usuCalificacion;
 	}
+	public Usuario(String usuNombreUsuario, String usuContraUsuario) {
+		super();
+		UsuNombreUsuario = usuNombreUsuario;
+		UsuContraUsuario = usuContraUsuario;
+	}
+	
+	
 
 }
