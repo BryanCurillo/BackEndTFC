@@ -50,39 +50,6 @@ public class ProductoRestController {
 
 		return productoService.save(producto);
 	}
-	//---------------------------------------\
-	
-	@PostMapping(value={"/ProductoPH"}, consumes= {MediaType.MULTIPART_FORM_DATA_VALUE})
-	@ResponseStatus(HttpStatus.CREATED)
-	public Producto addNewProduct(@RequestPart("product") Producto producto,
-									@RequestPart("imageFile")MultipartFile[]file) {
-
-//		return productoService.save(producto);
-		
-		try {
-			Set<ImageModel> images = uploadImage(file);
-			producto.setProductImages(images);
-			return productoService.save(producto);
-		} catch (Exception e) {
-			System.out.println(e.getMessage());
-			return null;
-		}
-	}
-	
-	public Set<ImageModel> uploadImage (MultipartFile[] multipartFiles) throws IOException{
-		
-		Set<ImageModel> imageModels = new HashSet<>();
-		for(MultipartFile file: multipartFiles) {
-			ImageModel imageModel= new ImageModel(
-					file.getOriginalFilename(),
-					file.getContentType(),
-					file.getBytes()
-					);
-			imageModels.add(imageModel);
-		}
-		return imageModels;
-	}
-	//-------------------------------------------/	
 
 	// EDITAR
 	@PutMapping("/Producto/{id}")
