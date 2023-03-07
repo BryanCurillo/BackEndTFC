@@ -10,8 +10,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="Categoria")
-public class Categoria implements Serializable{
+@Table(name = "Categoria")
+public class Categoria implements Serializable {
 	/**
 	 * 
 	 */
@@ -26,23 +26,23 @@ public class Categoria implements Serializable{
 	/**
 	 * 
 	 */
-	
-	@OneToOne(mappedBy = "ProdIdCategoria")
-	private Producto ProdIdCategoria;
-	
+	@OneToOne(mappedBy = "categoria")
+	private Producto producto;
+
 	public Long getCatId() {
 		return CatId;
 	}
+
 	public void setCatId(Long catId) {
 		CatId = catId;
 	}
+
 	public String getCatNombre() {
 		return CatNombre;
 	}
+
 	public void setCatNombre(String catNombre) {
 		CatNombre = catNombre;
 	}
-
-
 
 }

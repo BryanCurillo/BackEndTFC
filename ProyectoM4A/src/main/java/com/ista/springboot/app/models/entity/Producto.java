@@ -52,8 +52,8 @@ public class Producto implements Serializable {
 	 * 
 	 */
 	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ProdIdCategoria", referencedColumnName = "CatId")
-	private Categoria ProdIdCategoria;
+	@JoinColumn(name = "ProdIdCategoria",referencedColumnName = "CatId")
+	private Categoria categoria;
 
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -105,19 +105,22 @@ public class Producto implements Serializable {
 		ProdDescripcion = prodDescripcion;
 	}
 
+	public Categoria getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(Categoria categoria) {
+		this.categoria = categoria;
+	}
+
+
 //	public Byte getProdFoto() {
 //		return ProdFoto;
 //	}
 //	public void setProdFoto(Byte prodFoto) {
 //		ProdFoto = prodFoto;
 //	}
-	public Categoria getProdIdCategoria() {
-		return ProdIdCategoria;
-	}
-
-	public void setProdIdCategoria(Categoria prodIdCategoria) {
-		ProdIdCategoria = prodIdCategoria;
-	}
+	
 
 
 
