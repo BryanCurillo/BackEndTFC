@@ -8,6 +8,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -44,7 +45,7 @@ public class ProductoRestController {
 	}
 
 	// GUARDAR
-	@PostMapping("/Producto")
+	@PostMapping("/ProductoNew")
 	@ResponseStatus(HttpStatus.CREATED)
 	public Producto create(@RequestBody Producto producto) {
 
@@ -52,9 +53,9 @@ public class ProductoRestController {
 	}
 	//---------------------------------------\
 	
-	@PostMapping(value={"/Producto"}, consumes= {MediaType.MULTIPART_FORM_DATA_VALUE})
+	@PostMapping(value={"/ProductoPH"}, consumes= {MediaType.MULTIPART_FORM_DATA_VALUE})
 	@ResponseStatus(HttpStatus.CREATED)
-	public Producto addNewProduct(@RequestBody Producto producto,
+	public Producto addNewProduct(@RequestPart("product") Producto producto,
 									@RequestPart("imageFile")MultipartFile[]file) {
 
 //		return productoService.save(producto);
@@ -82,7 +83,7 @@ public class ProductoRestController {
 		}
 		return imageModels;
 	}
-	//-------------------------------------------/
+	//-------------------------------------------/	
 
 	// EDITAR
 	@PutMapping("/Producto/{id}")
@@ -91,9 +92,8 @@ public class ProductoRestController {
 
 		Producto productoACTUAL = productoService.findById(id);
 		productoACTUAL.setProdDescripcion(productoACTUAL.getProdDescripcion());
-		productoACTUAL.setProdFoto(productoACTUAL.getProdFoto());
 		productoACTUAL.setProdId(productoACTUAL.getProdId());
-		productoACTUAL.setProdIdCategoria(productoACTUAL.getProdIdCategoria());
+//		productoACTUAL.setProdIdCategoria(productoACTUAL.getProdIdCategoria());
 		productoACTUAL.setProdNombre(productoACTUAL.getProdNombre());
 		productoACTUAL.setProdPrecio(productoACTUAL.getProdPrecio());
 

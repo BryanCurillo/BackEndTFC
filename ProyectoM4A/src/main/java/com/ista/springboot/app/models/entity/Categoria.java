@@ -27,8 +27,8 @@ public class Categoria implements Serializable{
 	 * 
 	 */
 	
-	@OneToOne(mappedBy = "ProdIdCategoria")
-	private Producto ProdIdCategoria;
+//	@OneToOne(mappedBy = "ProdIdCategoria")
+//	private Producto ProdIdCategoria;
 	
 	public Long getCatId() {
 		return CatId;

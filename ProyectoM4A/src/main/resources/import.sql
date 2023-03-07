@@ -1,3 +1,13 @@
-INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (1,'pepe','0107560419','gato100tifico@gmail.com','los tanques ','marcho','macho','2222222223');
-INSERT INTO `rol`(`rol_id`, `rol_nombre`) VALUES (1,'vendedor');
-INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_nombre_usuario`, `usu_id_rol`, `usu_per_cedula`) VALUES (1,0,'1234','admin',1,1);
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Hogar');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Tecnologia');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Bebidas');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Comida');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Ropa');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Estudio');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Ferreteria');
+INSERT INTO `categoria`(`cat_nombre`) VALUES ('Medicina');
+INSERT INTO `producto`(`prod_id`, `prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES (1,'aaaaaa','aaa',123,1);
+INSERT INTO `producto`(`prod_id`, `prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES (2,'bbbbbb','bbb',345,2);
+INSERT INTO `producto`(`prod_id`, `prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES (3,'cccccc','ccc',789,3);
+INSERT INTO `producto`(`prod_id`, `prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES (4,'dddddd','ddd',155 ,4);
+INSERT INTO `producto`(`prod_id`, `prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES (5,'eeeeee','eee',166,5);
