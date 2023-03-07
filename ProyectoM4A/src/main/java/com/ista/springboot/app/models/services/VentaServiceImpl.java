@@ -4,11 +4,8 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
-import com.ista.springboot.app.models.dao.IUsuarioDao;
 import com.ista.springboot.app.models.dao.IVentaDao;
-import com.ista.springboot.app.models.entity.Usuario;
 import com.ista.springboot.app.models.entity.Venta;
 import com.ista.springboot.app.models.services.I.IVentaService;
 
