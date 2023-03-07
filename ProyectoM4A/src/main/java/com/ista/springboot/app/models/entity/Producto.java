@@ -53,9 +53,9 @@ public class Producto implements Serializable {
 	/**
 	 * 
 	 */
-//	@OneToOne
-//	@JoinColumn(name = "ProdIdCategoria")
-//	private Categoria ProdIdCategoria;
+	@OneToOne
+	@JoinColumn(name = "ProdIdCategoria")
+	private Categoria ProdIdCategoria;
 
 	
 	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
@@ -113,13 +113,13 @@ public class Producto implements Serializable {
 //	public void setProdFoto(Byte prodFoto) {
 //		ProdFoto = prodFoto;
 //	}
-//	public Categoria getProdIdCategoria() {
-//		return ProdIdCategoria;
-//	}
-//
-//	public void setProdIdCategoria(Categoria prodIdCategoria) {
-//		ProdIdCategoria = prodIdCategoria;
-//	}
+	public Categoria getProdIdCategoria() {
+		return ProdIdCategoria;
+	}
+
+	public void setProdIdCategoria(Categoria prodIdCategoria) {
+		ProdIdCategoria = prodIdCategoria;
+	}
 
 
 
