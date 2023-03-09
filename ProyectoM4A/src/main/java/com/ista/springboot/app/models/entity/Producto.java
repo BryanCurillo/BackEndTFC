@@ -1,16 +1,11 @@
 package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -50,9 +45,7 @@ public class Producto implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "CatId")
-	private List<Categoria> Categoria;
+	private Long ProdIdCategoria;
 	/**
 	 * 
 	 */
@@ -98,15 +91,13 @@ public class Producto implements Serializable {
 		ProdDescripcion = prodDescripcion;
 	}
 
-	public List<Categoria> getCategoria() {
-		return Categoria;
+	public Long getProdIdCategoria() {
+		return ProdIdCategoria;
 	}
 
-	public void setCategoria(List<Categoria> categoria) {
-		Categoria = categoria;
+	public void setProdIdCategoria(Long prodIdCategoria) {
+		ProdIdCategoria = prodIdCategoria;
 	}
-
-
 //	public Byte getProdFoto() {
 //		return ProdFoto;
 //	}

@@ -1,11 +1,16 @@
 package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +27,10 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long CatId;
 	private String CatNombre;
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "ProdIdCategoria")
+	private List<Producto> ProdId;
 	/**
 	 * 
 	 */
@@ -42,4 +51,13 @@ public class Categoria implements Serializable {
 		CatNombre = catNombre;
 	}
 
+	public List<Producto> getProdId() {
+		return ProdId;
+	}
+
+	public void setProdId(List<Producto> prodId) {
+		ProdId = prodId;
+	}
+
+	
 }
