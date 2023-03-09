@@ -13,6 +13,7 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.stream.Stream;
 
 @Service
@@ -39,6 +40,14 @@ public class FileServiceImp implements FileService {
 		} catch (IOException e) {
 			throw new RuntimeException("No se puede guardar el archivo. Error " + e.getMessage());
 		}
+	}
+	
+	@Override
+	public void save(List<MultipartFile> files) {
+		for(MultipartFile file: files) {
+			this.save(file);
+		}
+		
 	}
 
 	@Override
@@ -86,5 +95,7 @@ public class FileServiceImp implements FileService {
 			return "Error Borrando ";
 		}
 	}
+
+
 
 }

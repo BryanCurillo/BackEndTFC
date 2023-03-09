@@ -52,6 +52,24 @@ public class FileController {
 			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(new FileMessage(message));
 		}
 	}
+	
+	@PostMapping("/upload2")
+	public ResponseEntity<String>uploadFiles(@RequestParam("files")List<MultipartFile>files){
+		String message = "";
+
+		try {
+			fileService.save(files);
+
+			message = "Se subieron los archivos correctamente ";
+			return ResponseEntity.status(HttpStatus.OK).body(message);
+		} catch (Exception e) {
+			message = "Fallo al subir los archivos";
+			return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body(message);
+		}
+	}
+	
+	
+	
 
 	@GetMapping("/files")
 	public ResponseEntity<List<FileModel>> getFiles() {

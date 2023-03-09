@@ -4,6 +4,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.nio.file.Path;
+import java.util.List;
 import java.util.stream.Stream;
 
 public interface FileService {
@@ -17,6 +18,8 @@ public interface FileService {
     Metodo para guardar los archivos
      */
     public void save(MultipartFile file);
+    
+    public void save(List<MultipartFile> files);
 
     /*
     Metodo para cargar un archivo

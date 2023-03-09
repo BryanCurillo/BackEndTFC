@@ -34,7 +34,7 @@ public class Producto implements Serializable {
 	private String ProdNombre;
 	private Double ProdPrecio;
 	private String ProdDescripcion;
-//	private String ProdFoto;
+	private String FileName;
 
 
 	@OneToOne(mappedBy = "VenIdProducto")
@@ -59,8 +59,18 @@ public class Producto implements Serializable {
 	/**
 	 * 
 	 */
+	
+	
 	public Long getProdId() {
 		return ProdId;
+	}
+
+	public String getFileName() {
+		return FileName;
+	}
+
+	public void setFileName(String fileName) {
+		FileName = fileName;
 	}
 
 	public void setProdId(Long prodId) {
