@@ -10,3 +10,5 @@ INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_i
 INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES ('cccccc','ccc',789,3);
 INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES ('dddddd','ddd',155 ,4);
 INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES ('eeeeee','eee',166,5);
+INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (1,'asdf','0107560419','gt618@gmail.com','sayauisi','morenos','varon','00000000');
+INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_nombre_usuario`, `usu_per_id`) VALUES (1,'0','1234','admin',1);
