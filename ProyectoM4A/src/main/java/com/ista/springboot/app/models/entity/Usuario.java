@@ -99,6 +99,9 @@ public class Usuario implements Serializable{
 		UsuNombreUsuario = usuNombreUsuario;
 		UsuCalificacion = usuCalificacion;
 	}
+	public Usuario() {
+		super();
+	}
 
 	
 	
