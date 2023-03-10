@@ -93,11 +93,14 @@ public class Usuario implements Serializable{
 	public void setUsuCalificacion(double usuCalificacion) {
 		UsuCalificacion = usuCalificacion;
 	}
-	public Usuario(String usuNombreUsuario, String usuContraUsuario) {
+	public Usuario(Long usuId, String usuNombreUsuario, double usuCalificacion) {
 		super();
+		UsuId = usuId;
 		UsuNombreUsuario = usuNombreUsuario;
-		UsuContraUsuario = usuContraUsuario;
+		UsuCalificacion = usuCalificacion;
 	}
+
+	
 	
 	
 

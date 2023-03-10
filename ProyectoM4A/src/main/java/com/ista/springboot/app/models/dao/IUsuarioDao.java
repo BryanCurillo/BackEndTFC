@@ -24,7 +24,7 @@ public interface IUsuarioDao extends CrudRepository<Usuario, Long> {
 	
 	//¡¡¡¡¡¡¡¡¡¡AGREGAR EL NEW ( constructor ) este debe estar definido para 
 	//crear el objeto usuario solo con los atributos que necesito
-	@Query("SELECT new Usuario(u.UsuNombreUsuario , u.UsuContraUsuario)  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena")
+	@Query("SELECT new Usuario(u.UsuId , u.UsuContraUsuario, u.UsuCalificacion )  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena")
 	//tener cuidado findBy-UsuarioNombre
 	//siempre tiene que ir el findBy y el nombre los atributos tal y como esta en la clase usuario el AND sirve para separar los atributos que se van a usar para buscar
 	Usuario findByUsuNombreUsuarioAndUsuContraUsuario(@Param("usuario") String UsuNombreUsuario, @Param("contrasena") String UsuContraUsuario);
