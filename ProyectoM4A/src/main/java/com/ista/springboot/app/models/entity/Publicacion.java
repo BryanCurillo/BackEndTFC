@@ -16,8 +16,6 @@ public class Publicacion implements Serializable{
 	/**
 	 * 
 	 */
-	
-	
 	private static final long serialVersionUID = 1L;
 
 	public Publicacion() {
@@ -29,9 +27,7 @@ public class Publicacion implements Serializable{
 	/**
 	 * 
 	 */
-    @OneToOne
-    @JoinColumn(name = "PubIdVendedor")
-	private Usuario PubIdVendedor;
+	private Long PubIdVendedor;
 	/**
 	 * 
 	 */
@@ -45,16 +41,17 @@ public class Publicacion implements Serializable{
 	/**
 	 * 
 	 */
+
 	public Long getPubId() {
 		return PubId;
 	}
 	public void setPubId(Long pubId) {
 		PubId = pubId;
 	}
-	public Usuario getPubIdVendedor() {
+	public Long getPubIdVendedor() {
 		return PubIdVendedor;
 	}
-	public void setPubIdVendedor(Usuario pubIdVendedor) {
+	public void setPubIdVendedor(Long pubIdVendedor) {
 		PubIdVendedor = pubIdVendedor;
 	}
 	public Producto getPubIdProducto() {
@@ -69,5 +66,4 @@ public class Publicacion implements Serializable{
 	public void setPubDescripcion(String pubDescripcion) {
 		PubDescripcion = pubDescripcion;
 	}
-
 }
