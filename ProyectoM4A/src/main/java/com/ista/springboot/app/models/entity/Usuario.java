@@ -112,10 +112,19 @@ public class Usuario implements Serializable{
 		UsuNombreUsuario = usuNombreUsuario;
 		UsuCalificacion = usuCalificacion;
 	}
+	
+	
 	public Usuario() {
 		super();
 	}
 
+	//enviar los datos para que el administrador los pueda visualizar
+	public Usuario(Long usuId,String usuContraUsuario , String usuNombreUsuario) {
+		super();
+		UsuId = usuId;
+		UsuNombreUsuario = usuNombreUsuario;
+		UsuContraUsuario = usuContraUsuario;
+	}
 	
 	
 	

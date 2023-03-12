@@ -15,11 +15,12 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	
 	//metodo para retornar todos lo el metodo findall para que me retorne solo el usuario y no sus relaciones 
 	//usuario activos
-	@Query("SELECT new Usuario(u.UsuId, u.UsuNombreUsuario, u.UsuCalificacion) FROM Usuario u WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= true")
+	//Utilizo en UsuContraUsuario para mandar mediante un join los atributos de persona y evitar crear una nueva entity con los parametros que necesito
+	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= true")
 	List<Usuario> findAllUsuariosAct();
 	
 	//usuario Inactivos
-	@Query("SELECT new Usuario(u.UsuId, u.UsuNombreUsuario, u.UsuCalificacion) FROM Usuario u WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= false")
+	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= false")
 	List<Usuario> findAllUsuariosInc();
 
 	
