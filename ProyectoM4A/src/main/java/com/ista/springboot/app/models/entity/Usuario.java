@@ -81,7 +81,7 @@ public class Usuario implements Serializable{
 		UsuPerId = usuPerId;
 	}
 	
-	public boolean isUsuEstado() {
+	public boolean getUsuEstado() {
 		return UsuEstado;
 	}
 	public void setUsuEstado(boolean usuEstado) {
