@@ -21,7 +21,9 @@ public interface IUsuarioService {
 	
 	public  Boolean existByUser(String usu_nombreUsuario);
 	
-	public List<Usuario> findAllUsuarios();
+	public List<Usuario> findAllUsuAct();
+	
+	public List<Usuario> findAllUsuInc();
 	
 	
 }

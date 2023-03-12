@@ -95,8 +95,13 @@ public class UsuarioRestController {
 
 	}
 	
-	@GetMapping("/Usuarios")
+	@GetMapping("/UsuariosAct")
 	public List<Usuario> index2(){
-		return usuarioService.findAllUsuarios();
+		return usuarioService.findAllUsuAct();
+	}
+	
+	@GetMapping("/UsuariosInc")
+	public List<Usuario> index3(){
+		return usuarioService.findAllUsuAct();
 	}
 }

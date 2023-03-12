@@ -14,8 +14,13 @@ import com.ista.springboot.app.models.entity.Usuario;
 public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	
 	//metodo para retornar todos lo el metodo findall para que me retorne solo el usuario y no sus relaciones 
+	//usuario activos
 	@Query("SELECT new Usuario(u.UsuId, u.UsuNombreUsuario, u.UsuCalificacion) FROM Usuario u WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= true")
-	List<Usuario> findAllUsuarios();
+	List<Usuario> findAllUsuariosAct();
+	
+	//usuario Inactivos
+	@Query("SELECT new Usuario(u.UsuId, u.UsuNombreUsuario, u.UsuCalificacion) FROM Usuario u WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= false")
+	List<Usuario> findAllUsuariosInc();
 
 	
 	

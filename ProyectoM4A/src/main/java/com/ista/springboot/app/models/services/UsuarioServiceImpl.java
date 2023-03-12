@@ -55,9 +55,15 @@ public class UsuarioServiceImpl implements IUsuarioService{
 	}
 
 	@Override
-	public List<Usuario> findAllUsuarios() {
+	public List<Usuario> findAllUsuAct() {
 		// TODO Auto-generated method stub
-		return (List<Usuario>)dao.findAllUsuarios();
+		return (List<Usuario>)dao.findAllUsuariosAct();
+	}
+
+	@Override
+	public List<Usuario> findAllUsuInc() {
+		// TODO Auto-generated method stub
+		return (List<Usuario>)dao.findAllUsuariosInc();
 	}
 	
 
