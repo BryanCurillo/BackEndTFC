@@ -1,7 +1,7 @@
 package com.ista.springboot.app.models.dao;
 
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 
 import com.ista.springboot.app.models.entity.Usuario;
@@ -9,7 +9,7 @@ import com.ista.springboot.app.models.entity.Usuario;
 //¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡¡
 //investigar que es le jpa para consultar personalizadas
 
-public interface IUsuarioDao extends CrudRepository<Usuario, Long> {
+public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	
 	//modifico en metodo save para que solo me retone en usuario nada mas
 	
