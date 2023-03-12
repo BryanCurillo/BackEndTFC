@@ -95,4 +95,8 @@ public class UsuarioRestController {
 
 	}
 	
+	@GetMapping("/Usuarios")
+	public List<Usuario> index2(){
+		return usuarioService.findAllUsuarios();
+	}
 }

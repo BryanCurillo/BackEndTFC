@@ -53,6 +53,12 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return dao.existByUsuNombreUsuario(usu_nombreUsuario);
 	}
+
+	@Override
+	public List<Usuario> findAllUsuarios() {
+		// TODO Auto-generated method stub
+		return (List<Usuario>)dao.findAllUsuarios();
+	}
 	
 
 }

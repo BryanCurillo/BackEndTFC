@@ -1,5 +1,7 @@
 package com.ista.springboot.app.models.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -11,15 +13,10 @@ import com.ista.springboot.app.models.entity.Usuario;
 
 public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	
-	//modifico en metodo save para que solo me retone en usuario nada mas
-	
-	
-	
-	
-	
-	
-	
-	
+	//metodo para retornar todos lo el metodo findall para que me retorne solo el usuario y no sus relaciones 
+	@Query("SELECT new Usuario(u.UsuId, u.UsuNombreUsuario, u.UsuCalificacion) FROM Usuario u WHERE  u.UsuNombreUsuario != 'admin' ")
+	List<Usuario> findAllUsuarios();
+
 	
 	
 	//¡¡¡¡¡¡¡¡¡¡AGREGAR EL NEW ( constructor ) este debe estar definido para 

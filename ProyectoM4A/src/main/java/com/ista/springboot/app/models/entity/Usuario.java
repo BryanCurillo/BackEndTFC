@@ -64,6 +64,7 @@ public class Usuario implements Serializable{
 	 */
 	private String UsuContraUsuario;
 	private double UsuCalificacion;
+	private boolean UsuEstado;
 	/**
 	 * 
 	 */
@@ -78,6 +79,13 @@ public class Usuario implements Serializable{
 	}
 	public void setUsuPerId(Persona usuPerId) {
 		UsuPerId = usuPerId;
+	}
+	
+	public boolean isUsuEstado() {
+		return UsuEstado;
+	}
+	public void setUsuEstado(boolean usuEstado) {
+		UsuEstado = usuEstado;
 	}
 	public String getUsuNombreUsuario() {
 		return UsuNombreUsuario;
