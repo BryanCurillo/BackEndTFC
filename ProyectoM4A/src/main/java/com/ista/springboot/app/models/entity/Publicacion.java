@@ -38,6 +38,8 @@ public class Publicacion implements Serializable{
 	 * 
 	 */
 	private String PubDescripcion;
+	
+	private String PubTipo;
 	/**
 	 * 
 	 */
@@ -66,4 +68,12 @@ public class Publicacion implements Serializable{
 	public void setPubDescripcion(String pubDescripcion) {
 		PubDescripcion = pubDescripcion;
 	}
+	public String getPubTipo() {
+		return PubTipo;
+	}
+	public void setPubTipo(String pubTipo) {
+		PubTipo = pubTipo;
+	}
+	
+	
 }
