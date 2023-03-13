@@ -42,7 +42,8 @@ public class Oferta implements Serializable{
 	@JoinColumn(name = "OfeIdOfertante")
 	private Usuario OfeIdOfertante;
 	
-	@OneToOne(mappedBy = "PoIdOferta")
+	@OneToOne
+	@JoinColumn(name = "PoIdOferta")
 	private ProductoOferta PoIdOferta;
 	
 	private Boolean OfeEstado;
@@ -73,5 +74,15 @@ public class Oferta implements Serializable{
 	public void setOfeEstado(Boolean ofeEstado) {
 		OfeEstado = ofeEstado;
 	}
+
+	public ProductoOferta getPoIdOferta() {
+		return PoIdOferta;
+	}
+
+	public void setPoIdOferta(ProductoOferta poIdOferta) {
+		PoIdOferta = poIdOferta;
+	}
+	
+	
 	
 }
