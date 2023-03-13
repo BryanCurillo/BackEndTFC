@@ -3,6 +3,7 @@ package com.ista.springboot.app.models.dao;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
@@ -27,7 +28,7 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	
 	//¡¡¡¡¡¡¡¡¡¡AGREGAR EL NEW ( constructor ) este debe estar definido para 
 	//crear el objeto usuario solo con los atributos que necesito
-	@Query("SELECT new Usuario(u.UsuId , u.UsuNombreUsuario, u.UsuCalificacion )  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena")
+	@Query("SELECT new Usuario(u.UsuId , u.UsuNombreUsuario, u.UsuCalificacion )  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena and u.UsuEstado= true ")
 	//tener cuidado findBy-UsuarioNombre
 	//siempre tiene que ir el findBy y el nombre los atributos tal y como esta en la clase usuario el AND sirve para separar los atributos que se van a usar para buscar
 	Usuario findByUsuNombreUsuarioAndUsuContraUsuario(@Param("usuario") String UsuNombreUsuario, @Param("contrasena") String UsuContraUsuario);
@@ -36,5 +37,11 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	//Ver si ya existe un usuario
 	@Query("SELECT COUNT(u)>0  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario  ")
 	boolean existByUsuNombreUsuario(@Param("usuario")String UsuNombreUsuario);
+	
+	//modificar solo el estado de la persona
+	 @Modifying
+	 @Query("UPDATE Usuario u SET u.UsuEstado = :estado WHERE u.UsuId = :id")
+	 int actualizarEstado(@Param("id") Long UsuId, @Param("estado") Boolean UsuEstado);
+	
 	
 }
