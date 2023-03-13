@@ -21,4 +21,11 @@ public interface IUsuarioService {
 	
 	public  Boolean existByUser(String usu_nombreUsuario);
 	
+	public List<Usuario> findAllUsuAct();
+	
+	public List<Usuario> findAllUsuInc();
+	
+	public int updateEstado(Long id,Boolean estado);
+	
+	
 }

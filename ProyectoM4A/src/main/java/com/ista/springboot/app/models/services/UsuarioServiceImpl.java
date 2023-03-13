@@ -53,6 +53,27 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return dao.existByUsuNombreUsuario(usu_nombreUsuario);
 	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Usuario> findAllUsuAct() {
+		// TODO Auto-generated method stub
+		return (List<Usuario>)dao.findAllUsuariosAct();
+	}
+
+	@Override
+	@Transactional(readOnly = true)
+	public List<Usuario> findAllUsuInc() {
+		// TODO Auto-generated method stub
+		return (List<Usuario>)dao.findAllUsuariosInc();
+	}
+
+	@Override
+	@Transactional 
+	public int updateEstado(Long id,Boolean estado) {
+		// TODO Auto-generated method stub
+		return dao.actualizarEstado(id, estado);
+	}
 	
 
 }

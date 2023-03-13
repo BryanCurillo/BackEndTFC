@@ -65,7 +65,7 @@ public class UsuarioRestController {
 		usuarioACTUAL.setUsuNombreUsuario(usuario.getUsuNombreUsuario());
 		usuarioACTUAL.setUsuPerId(usuario.getUsuPerId());
 		usuarioACTUAL.setUsuContraUsuario(usuario.getUsuContraUsuario());
-		
+		usuarioACTUAL.setUsuEstado(usuario.getUsuEstado());
 		
 		return usuarioService.save(usuarioACTUAL);
 	}
@@ -82,7 +82,7 @@ public class UsuarioRestController {
 	
 	@GetMapping("/Usuario/{user}/{pass}")
 	public Usuario show(@PathVariable String user,@PathVariable String pass) {
-		System.out.println(user+' '+pass);
+
 		return usuarioService.findByUserPass(user, pass);
 		
 
@@ -93,6 +93,23 @@ public class UsuarioRestController {
 		return usuarioService.existByUser(user);
 		
 
+	}
+	
+	@GetMapping("/UsuariosAct")
+	public List<Usuario> index2(){
+		return usuarioService.findAllUsuAct();
+	}
+	
+	@GetMapping("/UsuariosInc")
+	public List<Usuario> index3(){
+		return usuarioService.findAllUsuInc();
+	}
+	
+	@GetMapping("/UsuariosEst/{id}/{estado}")
+	public int show(@PathVariable Long id,@PathVariable Boolean estado){
+		//1 si se realizo cambion
+		//0 no se pudo
+		return usuarioService.updateEstado(id, estado);
 	}
 	
 }
