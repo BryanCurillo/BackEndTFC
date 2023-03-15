@@ -25,7 +25,9 @@ public interface IUsuarioService {
 	
 	public List<Usuario> findAllUsuInc();
 	
+	//metodos personalizados
 	public int updateEstado(Long id,Boolean estado);
+	
 	
 	
 }

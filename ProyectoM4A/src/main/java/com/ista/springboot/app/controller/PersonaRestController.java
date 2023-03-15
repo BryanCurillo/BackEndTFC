@@ -52,7 +52,7 @@ public class PersonaRestController {
 		return iPersonaService.save(persona);
 	}
 
-	@DeleteMapping("/persona{id}")
+	@DeleteMapping("/persona/{id}")
 	@ResponseStatus(HttpStatus.NO_CONTENT)
 	public void delete(@PathVariable Long id) {
 		iPersonaService.delete(id);

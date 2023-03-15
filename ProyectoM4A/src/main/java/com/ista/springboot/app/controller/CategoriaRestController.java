@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -58,4 +59,29 @@ public class CategoriaRestController {
 	public void delete(@PathVariable Long id) {
 		categoriaService.delete(id);
 	}
+	
+	
+	//metodos personalizados
+	//listar categorias acitvas o inactivas
+	@GetMapping("/CategoriaAct/{estado}")
+	public List<Categoria> index2(@PathVariable boolean estado) {
+		return categoriaService.findCatAct(estado);
+	}
+	
+	@PutMapping("/CategoriaEst/{estado}/{nombre}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public int show(@PathVariable boolean estado,@PathVariable String nombre){
+		//1 si se realizo cambion
+		//0 no se pudo
+		return categoriaService.EstadoAct(estado, nombre);
+	}
+	
+	@PutMapping("/CategoriaUpName/{nombre}/{idCat}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public int show2(@PathVariable String nombre,@PathVariable Long idCat){
+		//1 si se realizo cambion
+		//0 no se pudo
+		return categoriaService.UpdateNombreCat(nombre, idCat);
+	}
+	
 }

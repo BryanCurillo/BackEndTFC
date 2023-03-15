@@ -27,6 +27,7 @@ public class Categoria implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long CatId;
 	private String CatNombre;
+	private boolean CatEstado;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "ProdIdCategoria")
@@ -35,9 +36,23 @@ public class Categoria implements Serializable {
 	 * 
 	 */
 
+	
+	
 	public Long getCatId() {
 		return CatId;
 	}
+
+	public boolean isCatEstado() {
+		return CatEstado;
+	}
+
+	public void setCatEstado(boolean catEstado) {
+		CatEstado = catEstado;
+	}
+
+
+
+
 
 	public void setCatId(Long catId) {
 		CatId = catId;
@@ -59,5 +74,13 @@ public class Categoria implements Serializable {
 		ProdId = prodId;
 	}
 
+	public Categoria(Long catId, String catNombre) {
+		super();
+		CatId = catId;
+		CatNombre = catNombre;
+		
+	}
+
+	
 	
 }

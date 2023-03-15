@@ -13,4 +13,14 @@ public interface ICategoriaService {
 	public Categoria findById(Long id);
 
 	public void delete(Long id);
+	
+	//metodos personalizados
+	public List<Categoria> findCatAct(boolean estado);
+	
+	public int EstadoAct(boolean estado , String nombre);
+	
+	
+	public int UpdateNombreCat(String nombreNew, Long idCat);
+	
+	
 }

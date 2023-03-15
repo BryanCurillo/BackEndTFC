@@ -105,7 +105,9 @@ public class UsuarioRestController {
 		return usuarioService.findAllUsuInc();
 	}
 	
-	@GetMapping("/UsuariosEst/{id}/{estado}")
+	//cambiar estado de usuario
+	@PutMapping("/UsuariosEst/{id}/{estado}")
+	@ResponseStatus(HttpStatus.CREATED)
 	public int show(@PathVariable Long id,@PathVariable Boolean estado){
 		//1 si se realizo cambion
 		//0 no se pudo

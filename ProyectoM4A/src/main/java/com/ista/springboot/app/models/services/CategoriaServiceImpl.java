@@ -38,4 +38,25 @@ public class CategoriaServiceImpl implements ICategoriaService{
 		categoriaDao.deleteById(id);
 	}
 
+	@Override
+	public List<Categoria> findCatAct(boolean estado) {
+		// TODO Auto-generated method stub
+		return categoriaDao.findAllBycatEstado(estado);
+	}
+
+	@Override
+	@Transactional
+	public int EstadoAct(boolean estado, String nombre) {
+		// TODO Auto-generated method stub
+		return categoriaDao.actualizarEstado(estado, nombre);
+	}
+
+	@Override
+	@Transactional
+	public int UpdateNombreCat(String nombreNew, Long idCat) {
+		// TODO Auto-generated method stub
+		return categoriaDao.actualizarNombre(nombreNew, idCat);
+	}
+
+
 }
