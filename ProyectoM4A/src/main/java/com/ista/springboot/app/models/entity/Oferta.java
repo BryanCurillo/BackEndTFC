@@ -27,8 +27,8 @@ public class Oferta implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "TruIdOferta")
-	private Trueque TruIdOferta;
+//	@OneToOne(mappedBy = "TruIdOferta")
+//	private Trueque TruIdOferta;
 	/***
 	 * 
 	 */
@@ -41,9 +41,10 @@ public class Oferta implements Serializable{
 	@JoinColumn(name = "PoIdOferta")
 	private ProductoOferta PoIdOferta;
 	
-	@OneToOne
-	@JoinColumn(name = "OfeIdPublicacion")
-	private Publicacion OfeIdPublicacion;
+	private Long PoIdPublicacion;
+//	@OneToOne
+//	@JoinColumn(name = "OfeIdPublicacion")
+//	private Publicacion OfeIdPublicacion;
 	
 	
 	private Boolean OfeEstado;
@@ -53,6 +54,22 @@ public class Oferta implements Serializable{
 
 	public Long getOfeId() {
 		return OfeId;
+	}
+
+//	public Trueque getTruIdOferta() {
+//		return TruIdOferta;
+//	}
+//
+//	public void setTruIdOferta(Trueque truIdOferta) {
+//		TruIdOferta = truIdOferta;
+//	}
+
+	public Long getPoIdPublicacion() {
+		return PoIdPublicacion;
+	}
+
+	public void setPoIdPublicacion(Long poIdPublicacion) {
+		PoIdPublicacion = poIdPublicacion;
 	}
 
 	public Boolean getOfeEstado() {
@@ -83,12 +100,13 @@ public class Oferta implements Serializable{
 		PoIdOferta = poIdOferta;
 	}
 
-	public Publicacion getOfeIdPublicacion() {
-		return OfeIdPublicacion;
-	}
 
-	public void setOfeIdPublicacion(Publicacion ofeIdPublicacion) {
-		OfeIdPublicacion = ofeIdPublicacion;
-	}
 	
 }
+//public Publicacion getOfeIdPublicacion() {
+//return OfeIdPublicacion;
+//}
+//
+//public void setOfeIdPublicacion(Publicacion ofeIdPublicacion) {
+//OfeIdPublicacion = ofeIdPublicacion;
+//}

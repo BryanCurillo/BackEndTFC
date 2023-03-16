@@ -12,7 +12,7 @@ INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_i
 INSERT INTO `producto`(`prod_descripcion`, `prod_nombre`, `prod_precio`, `prod_id_categoria`) VALUES ('eeeeee','eee',166,5);
 INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (1,'asdf','0107560419','gt618@gmail.com','sayauisi','morenos','Hombre','00000000');
 INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_per_id`) VALUES (1,'0','1234',true,'admin',1);
-INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (2,'aaaa','010322344','usuer1@gmail.com','macas','Santiago','Hombre','3333333');
-INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_per_id`) VALUES (2,'0','1234',false,'user11',2);
+INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (2,'user1','010322344','usuer1@gmail.com','macas','Santiago','Hombre','3333333');
+INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_per_id`) VALUES (2,'0','1234',true,'user1',2);
 INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (3,'bbbb','01073453223','gpaco.com','San joaquin','Limon Indanza','Hombre','44444');
-INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_per_id`) VALUES (3,'0','1234',true,'user22',3);
+INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_per_id`) VALUES (3,'0','1234',true,'user2',3);
