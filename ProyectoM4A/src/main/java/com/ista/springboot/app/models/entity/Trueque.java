@@ -34,6 +34,10 @@ public class Trueque implements Serializable {
 	private Usuario TruIdVendedor;
 	
 	@OneToOne
+	@JoinColumn(name = "TruIdOferta")
+	private Oferta TruIdOferta;
+	
+	@OneToOne
 	@JoinColumn(name = "TruIdComprador")
 	private Usuario TruIdComprador;
 	
@@ -59,6 +63,12 @@ public class Trueque implements Serializable {
 	public void setTruIdVendedor(Usuario truIdVendedor) {
 		TruIdVendedor = truIdVendedor;
 	}
+	public Oferta getTruIdOferta() {
+		return TruIdOferta;
+	}
+	public void setTruIdOferta(Oferta truIdOferta) {
+		TruIdOferta = truIdOferta;
+	}
 	public Usuario getTruIdComprador() {
 		return TruIdComprador;
 	}
@@ -77,5 +87,4 @@ public class Trueque implements Serializable {
 	public void setTruEstado(Boolean truEstado) {
 		TruEstado = truEstado;
 	}
-
 }

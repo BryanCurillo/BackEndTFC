@@ -34,6 +34,9 @@ public class Publicacion implements Serializable{
     @OneToOne
     @JoinColumn(name = "PubIdProducto")
 	private Producto PubIdProducto;
+    
+	@OneToOne(mappedBy = "OfeIdPublicacion")
+	private Oferta OfeIdPublicacion;
 	/**
 	 * 
 	 */
@@ -47,33 +50,40 @@ public class Publicacion implements Serializable{
 	public Long getPubId() {
 		return PubId;
 	}
+
 	public void setPubId(Long pubId) {
 		PubId = pubId;
 	}
+
 	public Long getPubIdVendedor() {
 		return PubIdVendedor;
 	}
+
 	public void setPubIdVendedor(Long pubIdVendedor) {
 		PubIdVendedor = pubIdVendedor;
 	}
+
 	public Producto getPubIdProducto() {
 		return PubIdProducto;
 	}
+
 	public void setPubIdProducto(Producto pubIdProducto) {
 		PubIdProducto = pubIdProducto;
 	}
+
 	public String getPubDescripcion() {
 		return PubDescripcion;
 	}
+
 	public void setPubDescripcion(String pubDescripcion) {
 		PubDescripcion = pubDescripcion;
 	}
+
 	public String getPubTipo() {
 		return PubTipo;
 	}
+
 	public void setPubTipo(String pubTipo) {
 		PubTipo = pubTipo;
 	}
-	
-	
 }

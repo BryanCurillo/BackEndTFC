@@ -1,16 +1,12 @@
 package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
-import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,9 +27,8 @@ public class Oferta implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "TruNumero")
-	private List<Trueque> OfeIdTrueque;
+	@OneToOne(mappedBy = "TruIdOferta")
+	private Trueque TruIdOferta;
 	/***
 	 * 
 	 */
@@ -46,7 +41,9 @@ public class Oferta implements Serializable{
 	@JoinColumn(name = "PoIdOferta")
 	private ProductoOferta PoIdOferta;
 	
-	private Boolean OfeEstado;
+	@OneToOne
+	@JoinColumn(name = "OfeIdPublicacion")
+	private Publicacion OfeIdPublicacion;
 	/**
 	 * 
 	 */
@@ -55,8 +52,8 @@ public class Oferta implements Serializable{
 		return OfeId;
 	}
 
-	public void setOfeId(Long oferId) {
-		OfeId = oferId;
+	public void setOfeId(Long ofeId) {
+		OfeId = ofeId;
 	}
 
 	public Usuario getOfeIdOfertante() {
@@ -67,14 +64,6 @@ public class Oferta implements Serializable{
 		OfeIdOfertante = ofeIdOfertante;
 	}
 
-	public Boolean getOfeEstado() {
-		return OfeEstado;
-	}
-
-	public void setOfeEstado(Boolean ofeEstado) {
-		OfeEstado = ofeEstado;
-	}
-
 	public ProductoOferta getPoIdOferta() {
 		return PoIdOferta;
 	}
@@ -82,7 +71,12 @@ public class Oferta implements Serializable{
 	public void setPoIdOferta(ProductoOferta poIdOferta) {
 		PoIdOferta = poIdOferta;
 	}
-	
-	
-	
+
+	public Publicacion getOfeIdPublicacion() {
+		return OfeIdPublicacion;
+	}
+
+	public void setOfeIdPublicacion(Publicacion ofeIdPublicacion) {
+		OfeIdPublicacion = ofeIdPublicacion;
+	}
 }
