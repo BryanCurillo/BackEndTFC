@@ -47,6 +47,10 @@ public class Usuario implements Serializable{
 	@JoinColumn(name = "PubIdVendedor")
 	private List<Publicacion> PubIdVendedor;
 	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "OfeIdOfertante")
+	private List<Usuario> OfeIdOfertante;
+	
 	
     @OneToOne
     @JoinColumn(name = "UsuPerId")
