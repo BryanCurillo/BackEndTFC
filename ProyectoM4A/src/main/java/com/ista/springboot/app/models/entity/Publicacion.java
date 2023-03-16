@@ -34,8 +34,8 @@ public class Publicacion implements Serializable{
 	private Long PubIdVendedor;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "OfeId")
-	private List<Usuario> PubOfeId;
+	@JoinColumn(name = "OfePubId")
+	private List<Oferta> OfePubId;
 	/**
 	 * 
 	 */

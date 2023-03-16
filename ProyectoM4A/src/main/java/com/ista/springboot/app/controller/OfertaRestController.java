@@ -52,6 +52,8 @@ public class OfertaRestController {
 		ofertaACTUAL.setPoIdOferta(oferta.getPoIdOferta());
 		ofertaACTUAL.setOfeEstado(oferta.getOfeEstado());
 		ofertaACTUAL.setOfeId(oferta.getOfeId());
+		ofertaACTUAL.setOfePubId(oferta.getOfePubId());
+		ofertaACTUAL.setOfeIdOfertante(oferta.getOfeIdOfertante());
 
 		return ofertaService.save(ofertaACTUAL);
 	}

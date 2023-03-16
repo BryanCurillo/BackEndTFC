@@ -49,7 +49,7 @@ public class Usuario implements Serializable{
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "OfeIdOfertante")
-	private List<Usuario> OfeIdOfertante;
+	private List<Oferta> OfeIdOfertante;
 	
 	
     @OneToOne
