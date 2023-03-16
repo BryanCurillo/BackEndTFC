@@ -66,6 +66,7 @@ public class Usuario implements Serializable{
 	private String UsuContraUsuario;
 	private double UsuCalificacion;
 	private boolean UsuEstado;
+	private boolean UsuRol;
 	/**
 	 * 
 	 */
@@ -74,6 +75,13 @@ public class Usuario implements Serializable{
 	}
 	public void setUsuId(Long usuId) {
 		UsuId = usuId;
+	}
+	
+	public boolean isUsuRol() {
+		return UsuRol;
+	}
+	public void setUsuRol(boolean usuRol) {
+		UsuRol = usuRol;
 	}
 	public Persona getUsuPerId() {
 		return UsuPerId;
@@ -107,11 +115,12 @@ public class Usuario implements Serializable{
 	public void setUsuCalificacion(double usuCalificacion) {
 		UsuCalificacion = usuCalificacion;
 	}
-	public Usuario(Long usuId, String usuNombreUsuario, double usuCalificacion) {
+	public Usuario(Long usuId, String usuNombreUsuario, double usuCalificacion,boolean usuRol) {
 		super();
 		UsuId = usuId;
 		UsuNombreUsuario = usuNombreUsuario;
 		UsuCalificacion = usuCalificacion;
+		UsuRol = usuRol;
 	}
 	
 	
@@ -120,14 +129,16 @@ public class Usuario implements Serializable{
 	}
 
 	//enviar los datos para que el administrador los pueda visualizar
-	public Usuario(Long usuId,String usuContraUsuario , String usuNombreUsuario) {
+	public Usuario(Long usuId,String usuContraUsuario , String usuNombreUsuario,boolean usuRol) {
 		super();
 		UsuId = usuId;
 		UsuNombreUsuario = usuNombreUsuario;
 		UsuContraUsuario = usuContraUsuario;
+		UsuRol = usuRol;
 	}
 	
 	
+
 	
 
 }

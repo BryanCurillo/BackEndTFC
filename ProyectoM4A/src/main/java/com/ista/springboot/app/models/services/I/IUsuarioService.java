@@ -28,6 +28,6 @@ public interface IUsuarioService {
 	//metodos personalizados
 	public int updateEstado(Long id,Boolean estado);
 	
-	
+	public int updateRol(Long id, Boolean rol);
 	
 }

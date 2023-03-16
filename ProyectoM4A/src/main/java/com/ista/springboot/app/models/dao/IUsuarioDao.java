@@ -17,18 +17,18 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	//metodo para retornar todos lo el metodo findall para que me retorne solo el usuario y no sus relaciones 
 	//usuario activos
 	//Utilizo en UsuContraUsuario para mandar mediante un join los atributos de persona y evitar crear una nueva entity con los parametros que necesito
-	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= true")
+	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario, u.UsuRol) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= true")
 	List<Usuario> findAllUsuariosAct();
 	
 	//usuario Inactivos
-	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= false")
+	@Query("SELECT new Usuario(u.UsuId, CONCAT(p.PerNombre,' ', p.PerApellido,' ',p.PerCedula) as UsuContraUsuario ,u.UsuNombreUsuario, u.UsuRol) FROM Usuario u JOIN u.UsuPerId p ON u.UsuPerId = p.PerId WHERE  u.UsuNombreUsuario != 'admin' and u.UsuEstado= false")
 	List<Usuario> findAllUsuariosInc();
 
 	
 	
 	//¡¡¡¡¡¡¡¡¡¡AGREGAR EL NEW ( constructor ) este debe estar definido para 
 	//crear el objeto usuario solo con los atributos que necesito
-	@Query("SELECT new Usuario(u.UsuId , u.UsuNombreUsuario, u.UsuCalificacion )  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena and u.UsuEstado= true ")
+	@Query("SELECT new Usuario(u.UsuId , u.UsuNombreUsuario, u.UsuCalificacion ,u.UsuRol)  FROM Usuario u WHERE u.UsuNombreUsuario = :usuario AND u.UsuContraUsuario = :contrasena and u.UsuEstado= true ")
 	//tener cuidado findBy-UsuarioNombre
 	//siempre tiene que ir el findBy y el nombre los atributos tal y como esta en la clase usuario el AND sirve para separar los atributos que se van a usar para buscar
 	Usuario findByUsuNombreUsuarioAndUsuContraUsuario(@Param("usuario") String UsuNombreUsuario, @Param("contrasena") String UsuContraUsuario);
@@ -43,5 +43,9 @@ public interface IUsuarioDao extends JpaRepository<Usuario, Long> {
 	 @Query("UPDATE Usuario u SET u.UsuEstado = :estado WHERE u.UsuId = :id")
 	 int actualizarEstado(@Param("id") Long UsuId, @Param("estado") Boolean UsuEstado);
 	
-	
+	 
+		//modificar solo el estado el rol de la persona 
+	 @Modifying
+	 @Query("UPDATE Usuario u SET u.UsuRol = :estado WHERE u.UsuId = :id")
+	 int actualizarRol(@Param("id") Long UsuId, @Param("estado") Boolean UsuEstado);
 }

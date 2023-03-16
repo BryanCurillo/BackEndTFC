@@ -114,4 +114,13 @@ public class UsuarioRestController {
 		return usuarioService.updateEstado(id, estado);
 	}
 	
+	//cambiar rol del usurio a administrados o quitarle el rol administrador
+	@PutMapping("/UsuariosAdm/{id}/{rol}")
+	@ResponseStatus(HttpStatus.CREATED)
+	public int show2(@PathVariable Long id,@PathVariable Boolean rol){
+		//1 si se realizo cambion
+		//0 no se pudo
+		return usuarioService.updateRol(id, rol);
+	}
+	
 }

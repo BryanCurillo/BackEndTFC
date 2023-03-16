@@ -74,6 +74,14 @@ public class UsuarioServiceImpl implements IUsuarioService{
 		// TODO Auto-generated method stub
 		return dao.actualizarEstado(id, estado);
 	}
+
+	//actualizar el rol a administrador 
+	@Override
+	@Transactional 
+	public int updateRol(Long id, Boolean estado) {
+		// TODO Auto-generated method stub
+		return dao.actualizarRol(id, estado);
+	}
 	
 
 	
