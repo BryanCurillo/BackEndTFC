@@ -28,18 +28,27 @@ public class Oferta implements Serializable{
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long OfeId;
-
+	/**
+	 * 
+	 */
+//	@OneToOne(mappedBy = "TruIdOferta")
+//	private Trueque TruIdOferta;
+	/***
+	 * 
+	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "OfeId")
-	private List<Publicacion> OfePubId;
-	
-	@OneToOne
-	@JoinColumn(name = "OfeIdOfertante")
-	private Usuario OfeIdOfertante;
+	@JoinColumn(name = "UsuId")
+	private List<Usuario> UsuOfeId;
 	
 	@OneToOne
 	@JoinColumn(name = "PoIdOferta")
 	private ProductoOferta PoIdOferta;
+	
+	private Long PoIdPublicacion;
+//	@OneToOne
+//	@JoinColumn(name = "OfeIdPublicacion")
+//	private Publicacion OfeIdPublicacion;
+	
 	
 	private Boolean OfeEstado;
 	/**
@@ -48,6 +57,22 @@ public class Oferta implements Serializable{
 
 	public Long getOfeId() {
 		return OfeId;
+	}
+
+//	public Trueque getTruIdOferta() {
+//		return TruIdOferta;
+//	}
+//
+//	public void setTruIdOferta(Trueque truIdOferta) {
+//		TruIdOferta = truIdOferta;
+//	}
+
+	public Long getPoIdPublicacion() {
+		return PoIdPublicacion;
+	}
+
+	public void setPoIdPublicacion(Long poIdPublicacion) {
+		PoIdPublicacion = poIdPublicacion;
 	}
 
 	public Boolean getOfeEstado() {
@@ -62,12 +87,12 @@ public class Oferta implements Serializable{
 		OfeId = ofeId;
 	}
 
-	public Usuario getOfeIdOfertante() {
-		return OfeIdOfertante;
+	public List<Usuario> getUsuOfeId() {
+		return UsuOfeId;
 	}
 
-	public void setOfeIdOfertante(Usuario ofeIdOfertante) {
-		OfeIdOfertante = ofeIdOfertante;
+	public void setUsuOfeId(List<Usuario> usuOfeId) {
+		UsuOfeId = usuOfeId;
 	}
 
 	public ProductoOferta getPoIdOferta() {
@@ -78,12 +103,13 @@ public class Oferta implements Serializable{
 		PoIdOferta = poIdOferta;
 	}
 
-	public List<Publicacion> getOfePubId() {
-		return OfePubId;
-	}
 
-	public void setOfePubId(List<Publicacion> ofePubId) {
-		OfePubId = ofePubId;
-	}
 	
 }
+//public Publicacion getOfeIdPublicacion() {
+//return OfeIdPublicacion;
+//}
+//
+//public void setOfeIdPublicacion(Publicacion ofeIdPublicacion) {
+//OfeIdPublicacion = ofeIdPublicacion;
+//}
