@@ -41,7 +41,6 @@ public class Oferta implements Serializable{
 	@JoinColumn(name = "PoIdOferta")
 	private ProductoOferta PoIdOferta;
 	
-	private Long PoIdPublicacion;
 //	@OneToOne
 //	@JoinColumn(name = "OfeIdPublicacion")
 //	private Publicacion OfeIdPublicacion;
@@ -63,14 +62,6 @@ public class Oferta implements Serializable{
 //	public void setTruIdOferta(Trueque truIdOferta) {
 //		TruIdOferta = truIdOferta;
 //	}
-
-	public Long getPoIdPublicacion() {
-		return PoIdPublicacion;
-	}
-
-	public void setPoIdPublicacion(Long poIdPublicacion) {
-		PoIdPublicacion = poIdPublicacion;
-	}
 
 	public Boolean getOfeEstado() {
 		return OfeEstado;

@@ -49,8 +49,8 @@ public class Publicacion implements Serializable{
 	private String PubTipo;
 	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "PoIdPublicacion")
-	private List<Oferta> OfeId;
+	@JoinColumn(name = "OfeId")
+	private List<Oferta> PuOfeId;
 	/**
 	 * 
 	 */
