@@ -11,7 +11,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "ProductoOferta")
-public class ProductoOferta implements Serializable{
+public class ProductoOferta implements Serializable {
 	/**
 	 * 
 	 */
@@ -25,53 +25,66 @@ public class ProductoOferta implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "PoIdOferta")
-	private Oferta PoIdOferta;
+//	@OneToOne(mappedBy = "PoIdOferta")
+//	private Oferta PoIdOferta;
 	/**
 	 * 
 	 */
 	private String PoNombre;
 	private Double PoPrecio;
-	private Byte PoFoto;
+	private String PoFoto;
 	private String PoDescripcion;
+
 	/**
 	 * 
 	 */
 	public Long getPoId() {
 		return PoId;
 	}
+
 	public void setPoId(Long poId) {
 		PoId = poId;
 	}
-	public Oferta getPoIdOferta() {
-		return PoIdOferta;
-	}
-	public void setPoIdOferta(Oferta poIdOferta) {
-		PoIdOferta = poIdOferta;
-	}
+
+//	public Oferta getPoIdOferta() {
+//		return PoIdOferta;
+//	}
+//
+//	public void setPoIdOferta(Oferta poIdOferta) {
+//		PoIdOferta = poIdOferta;
+//	}
+
 	public String getPoNombre() {
 		return PoNombre;
 	}
+
 	public void setPoNombre(String poNombre) {
 		PoNombre = poNombre;
 	}
+
 	public Double getPoPrecio() {
 		return PoPrecio;
 	}
+
 	public void setPoPrecio(Double poPrecio) {
 		PoPrecio = poPrecio;
 	}
-	public Byte getPoFoto() {
+
+
+	public String getPoFoto() {
 		return PoFoto;
 	}
-	public void setPoFoto(Byte poFoto) {
+
+	public void setPoFoto(String poFoto) {
 		PoFoto = poFoto;
 	}
+
 	public String getPoDescripcion() {
 		return PoDescripcion;
 	}
+
 	public void setPoDescripcion(String poDescripcion) {
 		PoDescripcion = poDescripcion;
 	}
-	
+
 }

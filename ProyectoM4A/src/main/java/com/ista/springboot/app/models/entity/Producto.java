@@ -37,8 +37,8 @@ public class Producto implements Serializable {
 	@OneToOne(mappedBy = "DetIdProducto")
 	private DetalleFactura DetIdProducto;
 
-	@OneToOne(mappedBy = "TruIdProducto")
-	private Trueque TruIdProducto;
+//	@OneToOne(mappedBy = "TruIdProducto")
+//	private Trueque TruIdProducto;
 
 	@OneToOne(mappedBy = "PubIdProducto")
 	private Publicacion PubIdProducto;

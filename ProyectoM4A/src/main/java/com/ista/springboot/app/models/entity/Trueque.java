@@ -28,63 +28,53 @@ public class Trueque implements Serializable {
 	 */
 	@OneToOne(mappedBy = "EncaIdTrueque")
 	private EncabezadoFactura encabezadoFactura;
-	
-	@OneToOne
-	@JoinColumn(name = "TruIdVendedor")
-	private Usuario TruIdVendedor;
-	
+
+
+
 	@OneToOne
 	@JoinColumn(name = "TruIdOferta")
 	private Oferta TruIdOferta;
-	
-	@OneToOne
-	@JoinColumn(name = "TruIdComprador")
-	private Usuario TruIdComprador;
-	
-	@OneToOne
-	@JoinColumn(name = "TruIdProducto")
-	private Producto TruIdProducto;
-	/**
-	 * 
-	 */
-	private Boolean TruEstado;
-	/**
-	 * 
-	 */
+
 	public Long getTruNumero() {
 		return TruNumero;
 	}
+
 	public void setTruNumero(Long truNumero) {
 		TruNumero = truNumero;
 	}
-	public Usuario getTruIdVendedor() {
-		return TruIdVendedor;
-	}
-	public void setTruIdVendedor(Usuario truIdVendedor) {
-		TruIdVendedor = truIdVendedor;
-	}
+
+
 	public Oferta getTruIdOferta() {
 		return TruIdOferta;
 	}
+
 	public void setTruIdOferta(Oferta truIdOferta) {
 		TruIdOferta = truIdOferta;
 	}
-	public Usuario getTruIdComprador() {
-		return TruIdComprador;
-	}
-	public void setTruIdComprador(Usuario truIdComprador) {
-		TruIdComprador = truIdComprador;
-	}
-	public Producto getTruIdProducto() {
-		return TruIdProducto;
-	}
-	public void setTruIdProducto(Producto truIdProducto) {
-		TruIdProducto = truIdProducto;
-	}
-	public Boolean getTruEstado() {
-		return TruEstado;
-	}
-	public void setTruEstado(Boolean truEstado) {
-		TruEstado = truEstado;
-	}
+
 }
+
+//public Usuario getTruIdComprador() {
+//return TruIdComprador;
+//}
+//public void setTruIdComprador(Usuario truIdComprador) {
+//TruIdComprador = truIdComprador;
+//}
+//public Producto getTruIdProducto() {
+//return TruIdProducto;
+//}
+//public void setTruIdProducto(Producto truIdProducto) {
+//TruIdProducto = truIdProducto;
+//}
+//public Boolean getTruEstado() {
+//return TruEstado;
+//}
+//public void setTruEstado(Boolean truEstado) {
+//TruEstado = truEstado;
+//}
+//public Usuario getTruIdVendedor() {
+//return TruIdVendedor;
+//}
+//public void setTruIdVendedor(Usuario truIdVendedor) {
+//TruIdVendedor = truIdVendedor;
+//}

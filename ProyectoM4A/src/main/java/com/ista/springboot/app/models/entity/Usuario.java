@@ -31,11 +31,11 @@ public class Usuario implements Serializable{
 	/**
 	 * 
 	 */
-	@OneToOne(mappedBy = "TruIdVendedor")
-	private Trueque TruIdVendedor;
+//	@OneToOne(mappedBy = "TruIdVendedor")
+//	private Trueque TruIdVendedor;
 	
-	@OneToOne(mappedBy = "TruIdComprador")
-	private Trueque TruIdComprador;
+//	@OneToOne(mappedBy = "TruIdComprador")
+//	private Trueque TruIdComprador;
 	
 	@OneToOne(mappedBy = "VenIdComprador")
 	private Venta VenIdComprador;

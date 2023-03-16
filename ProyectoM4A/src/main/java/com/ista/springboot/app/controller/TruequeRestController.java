@@ -50,14 +50,15 @@ public class TruequeRestController {
 	public Trueque update(@RequestBody Trueque trueque , @PathVariable Long id) {
 		
 		Trueque truequeACTUAL = truequeService.findById(id);
-		truequeACTUAL.setTruEstado(trueque.getTruEstado());
-		truequeACTUAL.setTruIdComprador(trueque.getTruIdComprador());
-		truequeACTUAL.setTruIdProducto(trueque.getTruIdProducto());
-		truequeACTUAL.setTruIdVendedor(trueque.getTruIdVendedor());
 		truequeACTUAL.setTruNumero(trueque.getTruNumero());
+		truequeACTUAL.setTruIdOferta(trueque.getTruIdOferta());
 		
 		return truequeService.save(truequeACTUAL);
 	}
+//	truequeACTUAL.setTruEstado(trueque.getTruEstado());
+//	truequeACTUAL.setTruIdComprador(trueque.getTruIdComprador());
+//	truequeACTUAL.setTruIdProducto(trueque.getTruIdProducto());
+//	truequeACTUAL.setTruIdVendedor(trueque.getTruIdVendedor());
 
 	// ELIMINAR
 	@DeleteMapping("/Trueque/{id}")

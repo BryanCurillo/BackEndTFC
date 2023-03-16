@@ -44,12 +44,23 @@ public class Oferta implements Serializable{
 	@OneToOne
 	@JoinColumn(name = "OfeIdPublicacion")
 	private Publicacion OfeIdPublicacion;
+	
+	
+	private Boolean OfeEstado;
 	/**
 	 * 
 	 */
 
 	public Long getOfeId() {
 		return OfeId;
+	}
+
+	public Boolean getOfeEstado() {
+		return OfeEstado;
+	}
+
+	public void setOfeEstado(Boolean ofeEstado) {
+		OfeEstado = ofeEstado;
 	}
 
 	public void setOfeId(Long ofeId) {
@@ -79,4 +90,5 @@ public class Oferta implements Serializable{
 	public void setOfeIdPublicacion(Publicacion ofeIdPublicacion) {
 		OfeIdPublicacion = ofeIdPublicacion;
 	}
+	
 }
