@@ -43,9 +43,6 @@ public class Usuario implements Serializable{
 	@OneToOne(mappedBy = "VenIdVendedor")
 	private Venta VenIdVendedor;
 	
-	@OneToOne(mappedBy = "OfeIdOfertante")
-	private Oferta OfeIdOfertante;
-	
 	@OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	@JoinColumn(name = "PubIdVendedor")
 	private List<Publicacion> PubIdVendedor;

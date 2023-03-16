@@ -38,7 +38,7 @@ public class Oferta implements Serializable{
 	 */
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "UsuId")
-	private List<Usuario> UsuOfeId;
+	private List<Usuario> OfeIdOfertante;
 	
 	@OneToOne
 	@JoinColumn(name = "PoIdOferta")
@@ -87,12 +87,12 @@ public class Oferta implements Serializable{
 		OfeId = ofeId;
 	}
 
-	public List<Usuario> getUsuOfeId() {
-		return UsuOfeId;
+	public List<Usuario> getOfeIdOfertante() {
+		return OfeIdOfertante;
 	}
 
-	public void setUsuOfeId(List<Usuario> usuOfeId) {
-		UsuOfeId = usuOfeId;
+	public void setOfeIdOfertante(List<Usuario> ofeIdOfertante) {
+		OfeIdOfertante = ofeIdOfertante;
 	}
 
 	public ProductoOferta getPoIdOferta() {
