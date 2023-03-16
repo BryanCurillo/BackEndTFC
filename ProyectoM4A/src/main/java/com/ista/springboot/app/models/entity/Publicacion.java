@@ -1,6 +1,7 @@
 package com.ista.springboot.app.models.entity;
 
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -13,6 +14,11 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import javax.persistence.PrePersist;
 
 @Entity
 @Table (name="Publicacion")
@@ -33,9 +39,16 @@ public class Publicacion implements Serializable{
 	 */
 	private Long PubIdVendedor;
 	
+
+	
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	@JoinColumn(name = "OfePubId")
 	private List<Oferta> OfePubId;
+	
+	
+	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "OfeId")
+	private List<Usuario> PubOfeId;
 	/**
 	 * 
 	 */
@@ -54,7 +67,15 @@ public class Publicacion implements Serializable{
 	/**
 	 * 
 	 */
-
+	
+	@Temporal(TemporalType.DATE)
+	private Date PubFecha;
+	
+	@PrePersist
+	public void prePersist() {
+		PubFecha = new Date();
+	}
+	
 	public Long getPubId() {
 		return PubId;
 	}
@@ -94,4 +115,13 @@ public class Publicacion implements Serializable{
 	public void setPubTipo(String pubTipo) {
 		PubTipo = pubTipo;
 	}
+
+	public Date getPubFecha() {
+		return PubFecha;
+	}
+
+	public void setPubFecha(Date pubFecha) {
+		PubFecha = pubFecha;
+	}
+	
 }
