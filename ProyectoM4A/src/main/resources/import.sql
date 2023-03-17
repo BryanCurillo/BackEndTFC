@@ -15,4 +15,4 @@ INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_e
 INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (2,'user22','010322344','usuer1@gmail.com','macas','Santiago','Hombre','3333333');
 INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`, `usu_rol`,`usu_per_id`) VALUES (2,'0','1234',true,'user11',false,2);
 INSERT INTO `persona`(`per_id`, `per_apellido`, `per_cedula`, `per_correo`, `per_direccion`, `per_nombre`, `per_sexo`, `per_telefono`) VALUES (3,'bbbb','01073453223','gpaco.com','San joaquin','Limon Indanza','Hombre','44444');
-INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`,`usu_rol` ,`usu_per_id`) VALUES (3,'0','1234',true,'user22',true,3);
+INSERT INTO `usuario`(`usu_id`, `usu_calificacion`, `usu_contra_usuario`, `usu_estado` ,`usu_nombre_usuario`,`usu_rol` ,`usu_per_id`) VALUES (3,'0','1234',true,'user22',false,3);
