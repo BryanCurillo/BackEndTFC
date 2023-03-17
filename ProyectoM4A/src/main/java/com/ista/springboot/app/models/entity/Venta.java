@@ -42,9 +42,7 @@ public class Venta implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToOne
-	@JoinColumn(name = "VenIdVendedor")
-	private Usuario VenIdVendedor;
+
 	/**
 	 * 
 	 */
@@ -66,13 +64,6 @@ public class Venta implements Serializable {
 	public void setVenIdComprador(Usuario venIdComprador) {
 		VenIdComprador = venIdComprador;
 	}
-	public Usuario getVenIdVendedor() {
-		return VenIdVendedor;
-	}
-	public void setVenIdVendedor(Usuario venIdVendedor) {
-		VenIdVendedor = venIdVendedor;
-	}
-
 
 
 }
