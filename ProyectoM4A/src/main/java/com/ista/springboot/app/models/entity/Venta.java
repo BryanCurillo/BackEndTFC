@@ -36,9 +36,7 @@ public class Venta implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToOne
-	@JoinColumn(name = "VenIdComprador")
-	private Usuario VenIdComprador;
+	private Long VenIdComprador;
 	/**
 	 * 
 	 */
@@ -58,10 +56,10 @@ public class Venta implements Serializable {
 	public void setVenIdPublicacion(Publicacion venIdPublicacion) {
 		VenIdPublicacion = venIdPublicacion;
 	}
-	public Usuario getVenIdComprador() {
+	public Long getVenIdComprador() {
 		return VenIdComprador;
 	}
-	public void setVenIdComprador(Usuario venIdComprador) {
+	public void setVenIdComprador(Long venIdComprador) {
 		VenIdComprador = venIdComprador;
 	}
 
