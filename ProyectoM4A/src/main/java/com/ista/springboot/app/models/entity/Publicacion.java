@@ -56,8 +56,9 @@ public class Publicacion implements Serializable{
     @JoinColumn(name = "PubIdProducto")
 	private Producto PubIdProducto;
     
-	@OneToOne(mappedBy = "VenIdPublicacion")
-	private Venta VenIdPublicacion;
+    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@JoinColumn(name = "VenIdPublicacion")
+	private List<Venta> VenIdPublicacion;
     
 	
 	

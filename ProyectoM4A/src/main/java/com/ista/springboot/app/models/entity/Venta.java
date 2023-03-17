@@ -27,16 +27,16 @@ public class Venta implements Serializable {
 	/**
 	 * 
 	 */
-	@OneToOne
-	@JoinColumn(name = "VenIdPublicacion")
-	private Publicacion VenIdPublicacion;
-	
+
+	private Long VenIdPublicacion;
+
 //	@OneToOne(mappedBy = "EncaIdVenta")
 //	private EncabezadoFactura encabezadoFactura;
 	/**
 	 * 
 	 */
 	private Long VenIdComprador;
+
 	/**
 	 * 
 	 */
@@ -47,21 +47,26 @@ public class Venta implements Serializable {
 	public Long getVenId() {
 		return VenId;
 	}
+
 	public void setVenId(Long venId) {
 		VenId = venId;
 	}
-	public Publicacion getVenIdPublicacion() {
+
+	public Long getVenIdPublicacion() {
 		return VenIdPublicacion;
 	}
-	public void setVenIdPublicacion(Publicacion venIdPublicacion) {
+
+	public void setVenIdPublicacion(Long venIdPublicacion) {
 		VenIdPublicacion = venIdPublicacion;
 	}
+
 	public Long getVenIdComprador() {
 		return VenIdComprador;
 	}
+
 	public void setVenIdComprador(Long venIdComprador) {
 		VenIdComprador = venIdComprador;
 	}
 
-
+	
 }
