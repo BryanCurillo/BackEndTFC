@@ -56,11 +56,12 @@ public class Publicacion implements Serializable{
     @JoinColumn(name = "PubIdProducto")
 	private Producto PubIdProducto;
     
-//	@OneToOne(mappedBy = "OfeIdPublicacion")
-//	private Oferta OfeIdPublicacion;
-	/**
-	 * 
-	 */
+	@OneToOne(mappedBy = "VenIdPublicacion")
+	private Venta VenIdPublicacion;
+    
+	
+	
+
 	private String PubDescripcion;
 	
 	private String PubTipo;

@@ -23,16 +23,16 @@ public class Venta implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long VenId;
-	private String VenMetodoPago;
+//	private String VenMetodoPago;
 	/**
 	 * 
 	 */
 	@OneToOne
-	@JoinColumn(name = "VenIdProducto")
-	private Producto VenIdProducto;
+	@JoinColumn(name = "VenIdPublicacion")
+	private Publicacion VenIdPublicacion;
 	
-	@OneToOne(mappedBy = "EncaIdVenta")
-	private EncabezadoFactura encabezadoFactura;
+//	@OneToOne(mappedBy = "EncaIdVenta")
+//	private EncabezadoFactura encabezadoFactura;
 	/**
 	 * 
 	 */
@@ -54,23 +54,11 @@ public class Venta implements Serializable {
 	public void setVenId(Long venId) {
 		VenId = venId;
 	}
-	public String getVenMetodoPago() {
-		return VenMetodoPago;
+	public Publicacion getVenIdPublicacion() {
+		return VenIdPublicacion;
 	}
-	public void setVenMetodoPago(String venMetodoPago) {
-		VenMetodoPago = venMetodoPago;
-	}
-	public Producto getVenIdProducto() {
-		return VenIdProducto;
-	}
-	public void setVenIdProducto(Producto venIdProducto) {
-		VenIdProducto = venIdProducto;
-	}
-	public EncabezadoFactura getEncabezadoFactura() {
-		return encabezadoFactura;
-	}
-	public void setEncabezadoFactura(EncabezadoFactura encabezadoFactura) {
-		this.encabezadoFactura = encabezadoFactura;
+	public void setVenIdPublicacion(Publicacion venIdPublicacion) {
+		VenIdPublicacion = venIdPublicacion;
 	}
 	public Usuario getVenIdComprador() {
 		return VenIdComprador;
@@ -84,4 +72,7 @@ public class Venta implements Serializable {
 	public void setVenIdVendedor(Usuario venIdVendedor) {
 		VenIdVendedor = venIdVendedor;
 	}
+
+
+
 }

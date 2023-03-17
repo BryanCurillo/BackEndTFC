@@ -51,9 +51,8 @@ public class VentaRestController {
 		
 		Venta ventaACTUAL = ventaService.findById(id);
 		ventaACTUAL.setVenIdComprador(venta.getVenIdComprador());
-		ventaACTUAL.setVenIdProducto(venta.getVenIdProducto());
+		ventaACTUAL.setVenIdPublicacion(venta.getVenIdPublicacion());
 		ventaACTUAL.setVenIdVendedor(venta.getVenIdVendedor());
-		ventaACTUAL.setVenMetodoPago(venta.getVenMetodoPago());
 		ventaACTUAL.setVenId(venta.getVenId());
 		
 

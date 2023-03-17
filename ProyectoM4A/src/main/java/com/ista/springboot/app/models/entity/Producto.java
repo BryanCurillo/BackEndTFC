@@ -31,8 +31,8 @@ public class Producto implements Serializable {
 	private String FileName;
 
 
-	@OneToOne(mappedBy = "VenIdProducto")
-	private Venta VenIdProducto;
+//	@OneToOne(mappedBy = "VenIdProducto")
+//	private Venta VenIdProducto;
 
 	@OneToOne(mappedBy = "DetIdProducto")
 	private DetalleFactura DetIdProducto;
